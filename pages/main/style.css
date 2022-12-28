@@ -108,13 +108,13 @@ header li:first-child {
 
 }
 
-.left-side_first_section {
+.left-side_first-section {
     position: relative;
     width: 40%;
     top: 166px;
 }
 
-.left-side_title {
+.first-section_title {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 4.4em;
     color: #FFFFFF;
@@ -124,14 +124,14 @@ header li:first-child {
     line-height: 1.26em;
 }
 
-.left-side_text {
+.first-section_text {
     font-size: 1.5em;
     color: #CDCDCD;
     margin-bottom: 42px;
     line-height: 1.5em;
 }
 
-.left-side_button {
+.first-section_button {
     height: 52px;
     background: #F1CDB3;
     border-radius: 100px;
@@ -162,7 +162,7 @@ header li:first-child {
 
 }
 
-.left-side_second_section {
+.left-side_second-section {
     width: 50%;
     display: flex;
     justify-content: center;
@@ -170,12 +170,12 @@ header li:first-child {
     left: 24px;
 }
 
-.left-side_second_section img {
+.left-side_second-section img {
     height: 408px;
 
 }
 
-.right-side_second_section {
+.right-side_second-section {
     width: 50%;
     padding-bottom: 15px;
     position: relative;
@@ -189,21 +189,21 @@ h3 {
     font-weight: 400;
 }
 
-.right-side_second_section h3 {
+.right-side_second-section h3 {
     padding-top: 16px;
     padding-bottom: -1px;
     letter-spacing: 0.06em;
     line-height: 1.3em;
 }
 
-.right-side_second_section p {
+.right-side_second-section p {
     font-size: 1.5em;
     color: #4C4C4C;
     line-height: 1.6em;
     padding-top: 25px;
 }
 
-.right-side_second_section p:last-child {
+.right-side_second-section p:last-child {
     padding-bottom: 0;
 }
 
@@ -233,16 +233,12 @@ h3 {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-
     align-items: center;
 }
 
 .card-pet {
     margin-left: 34px;
     margin-right: 33px;
-}
-
-.card-pet {
     width: 270px;
 }
 
@@ -290,8 +286,9 @@ h3 {
 }
 
 
-
 .second-section_button {
+    display: block;
+    margin: 90px auto 0 auto;
     height: 52px;
     width: 261px;
     background: #F1CDB3;
@@ -301,8 +298,31 @@ h3 {
     border: none;
     letter-spacing: 0.1rem;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    display: block;
-    margin: 90px auto 0 auto;
+
+}
+
+.fourth-section_title h3 {
+    position: relative;
+    text-align: center;
+    top: 84px;
+    line-height: 1.25em;
+    letter-spacing: 0.06em;
+}
+
+.fourth-section_help-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 
 
+}
+
+.help-icons {
+    width: 200px;
+    margin-left: 28px;
+    margin-right: 8px;
+}
+
+.help-icons:last-child {
+    margin: 0;
 }
