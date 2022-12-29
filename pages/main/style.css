@@ -301,12 +301,19 @@ h3 {
 
 }
 
+
+.fourth-section_title {
+    height: 120px;
+    margin-bottom: 111px;
+}
+
 .fourth-section_title h3 {
     position: relative;
     text-align: center;
     top: 84px;
     line-height: 1.25em;
     letter-spacing: 0.06em;
+
 }
 
 .fourth-section_help-items {
@@ -314,15 +321,28 @@ h3 {
     flex-wrap: wrap;
     justify-content: center;
 
-
 }
 
 .help-icons {
-    width: 200px;
-    margin-left: 28px;
-    margin-right: 8px;
+    display: inline-block;
+    text-align: center;
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-bottom: 55px;
 }
 
-.help-icons:last-child {
-    margin: 0;
+
+
+.help-icons img {
+    margin-bottom: 28px;
+    display: inline-block;
+    height: 60px;
+}
+
+.help-icons p {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2em;
+    letter-spacing: 0.06em;
+    color: #545454;
+    text-align: center;
 }
