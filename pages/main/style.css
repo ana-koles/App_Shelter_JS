@@ -68,7 +68,6 @@ header p {
 
 }
 
-
 header a {
     text-decoration: none;
     color: #F1CDB3;
@@ -77,32 +76,43 @@ header a {
 .nav-menu {
     position: absolute;
     top: 24px;
-    right: 4px;
+    right: 1px;
 }
 
-.nav-menu_list {
+.nav-menu_list  {
     display: flex;
     flex-direction: row;
     list-style-type: none;
-    color: #FAFAFA;
+    color: #CDCDCD;
 
 }
 
 .nav-menu_item {
-    margin-right: 32px;
+    margin-right: 33px;
     font-size: 1.5em;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 400;
+    color: #CDCDCD;
 }
 
-header li:last-child {
+.menu-link {
+    font-size: 1em;
+    color: #CDCDCD;
+}
+
+.nav-menu_list li:first-child {
+    border-bottom: 0.2em solid #F1CDB3;
+}
+
+.menu-link_first {
+    color: #FAFAFA;
+    font-size: 1em;
+}
+
+.nav-menu_list li:last-child {
     margin-right: 0;
 }
 
-header li:first-child {
-    border-bottom: 0.2em solid #F1CDB3;
-
-}
 
 .first-section_content {
     display: flex;
@@ -147,6 +157,8 @@ header li:first-child {
     width: 207px;
     letter-spacing: 0.1rem;
     font-family: Georgia, 'Times New Roman', Times, serif;
+/*     display: inline-block
+    width: 100% */
 
 }
 
@@ -249,8 +261,6 @@ h3 {
     line-height: 1.25em;
     letter-spacing: 0.06em;
     margin-left: 5px;
-
-
 }
 
 .third-section_cards {
@@ -265,6 +275,17 @@ h3 {
     margin-right: 33px;
     width: 270px;
 }
+
+.card-pet:hover {
+    cursor: grab;
+}
+
+.card-pet:hover .card-button {
+    cursor: grab;
+    background-color: #F1CDB3;
+}
+
+
 
 .card-name {
     text-align: center;
@@ -287,7 +308,7 @@ h3 {
     letter-spacing: 0.06em;
 }
 
-.slider {
+.button-arrow {
     height: 52px;
     width: 52px;
     border: 0.2em solid #F1CDB3;
@@ -295,25 +316,26 @@ h3 {
     margin-top: 33px;
 }
 
-.slider-left {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.button-arrow:hover {
+    background-color: #F1CDB3;
 }
 
 .slider-right {
     margin-right: 1px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
+}
+
+.arrow-right {
     transform: rotate(-180deg);
 }
+
 
 .fourth-section {
     height: 611px;
 }
-
-
 
 .fourth-section_title {
     height: 120px;
@@ -388,7 +410,7 @@ h3 {
     display: block;
     width: 45%;
     padding-bottom: 10px;
-    padding-left: 16px;
+    padding-left: 20px;
 }
 
 .right-side_fifth-section h3 {

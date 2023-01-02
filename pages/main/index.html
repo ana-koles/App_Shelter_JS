@@ -22,10 +22,10 @@
                 </a>
                 <div class="nav-menu">
                     <ul class="nav-menu_list">
-                        <li class="nav-menu_item">About the Shelter</li>
-                        <li class="nav-menu_item">Our pets</li>
-                        <li class="nav-menu_item">Help the shelter</li>
-                        <li class="nav-menu_item">Contacts</li>
+                        <li class="nav-menu_item"><a class="menu-link_first" href="#about-shelter">About the Shelter</a></li>
+                        <li class="nav-menu_item"><a class="menu-link" href="#our-pets">Our pets</a></li>
+                        <li class="nav-menu_item"><a class="menu-link" href="#help">Help the shelter</a></li>
+                        <li class="nav-menu_item"><a class="menu-link" href="#contacts">Contacts</a></li>
                     </ul>
                 </div>
             </header>
@@ -45,7 +45,7 @@
                     He or she will love you more than anybody else<br>
                     in the world, you will see!
                 </p>
-                    <button class="first-section_button">Make a friend</button>
+                    <button type="button" onclick='location.href="#our-pets"' name="make a friend" class="first-section_button">Make a friend</button>
             </div>
 
             <!-- Правая часть -->
@@ -56,7 +56,7 @@
     </section>
 
     <!-- Вторая часть -->
-    <section class="second-section">
+    <section class="second-section" id="about-shelter">
         <!-- Содержание второй секции -->
         <div class="container second-section_content">
 
@@ -88,7 +88,7 @@
     </section>
 
     <!-- Третья секция -->
-    <section class="third-section">
+    <section class="third-section" id="our-pets">
         <div class="container third-section_content">
             <div class="third-section_title">
                 <h3>Our friends who<br>
@@ -97,29 +97,40 @@
 
             <!-- Карточки -->
             <div class="third-section_cards">
+
+                <!-- Левый Слайдер -->
                 <div class="slider slider-left">
-                    <img class="arrow" src="../../assests/images/Arrow.png" alt="">
+                    <button type="button" class="button-arrow left">
+                        <img class="arrow" src="../../assests/images/Arrow.png" alt="arrow left">
+                    </button>
                 </div>
+
                 <div class="card-pet">
                     <img src="../../assests/images/pets-katrine.png" alt="Katrine">
                     <p class="card-name">Katrine</p>
-                    <button class="card-button">Learn more</button>
+                    <button type="button" class="card-button" onclick='location.href="#our-pets"'>Learn more</button>
                 </div>
 
                 <div class="card-pet">
                     <img src="../../assests/images/pets-jennifer.png" alt="Jennifer">
                     <p class="card-name">Jennifer</p>
-                    <button class="card-button">Learn more</button>
+                    <button type="button" class="card-button"  onclick='location.href="#our-pets"'>Learn more</button>
                 </div>
 
                 <div class="card-pet">
                     <img src="../../assests/images/pets-woody.png" alt="Woody">
                     <p class="card-name">Woody</p>
-                    <button class="card-button">Learn more</button>
+                    <button type="button" class="card-button"  onclick='location.href="#our-pets"'>Learn more</button>
                 </div>
+
+                <!-- Правый Слайдер -->
                 <div class="slider slider-right">
-                    <img class="arrow" src="../../assests/images/Arrow.png" alt="">
+                    <button type="button" class="button-arrow right">
+                        <img class="arrow-right" src="../../assests/images/Arrow.png" alt="arrow right">
+                    </button>
                 </div>
+
+
             </div>
 
             <!-- Кнопка -->
@@ -130,7 +141,7 @@
     </section>
 
     <!-- Четвертая секция -->
-    <section class="fourth-section">
+    <section class="fourth-section" id="help">
         <!-- Содержание четвертой секции -->
         <div class="container fourth-section_content">
             <div class="fourth-section_title">
@@ -199,7 +210,7 @@
                 </h5>
                 <div class="block-account">
                     <img src="../../assests/icons/credit-card.svg" alt="creding card">
-                    <p>8380 2880 8028 8791 7435</p>
+                    <p><a href="#">8380 2880 8028 8791 7435</a></p>
                 </div>
                     <p class="card-instructions">
                         Legal information and lorem ipsum dolor
@@ -214,7 +225,7 @@
     </section>
 
     <!-- Шестая секция -->
-    <footer class="footer">
+    <footer class="footer" id="contacts">
         <div class="container footer_content">
 
             <!-- Левая часть -->
@@ -252,7 +263,7 @@
 
             <div class="footer_right-side">
                 <div class="footer_image">
-                    <img src="../../assests/images/footer-puppy.png" alt="footer-puppy"> 
+                    <img src="../../assests/images/footer-puppy.png" alt="footer-puppy">
                 </div>
             </div>
         </div>
