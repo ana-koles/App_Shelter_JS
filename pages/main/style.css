@@ -447,11 +447,16 @@ h3 {
 }
 
 .block-account p {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 2em;
     position: relative;
     top: 8px;
     left: 30px;
+}
+
+.block-account_link {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2em;
+    color: #545454;
+    text-decoration: none;
     letter-spacing: 0.06em;
 }
 
@@ -510,7 +515,8 @@ h3 {
     margin-right: 19px;
 }
 
-.mail p {
+.mail_link {
+    text-decoration: none;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 2em;
     line-height: 115%;
@@ -529,12 +535,13 @@ h3 {
     margin-right: 19px;
 }
 
-.phone p {
+.phone_link {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 2em;
     letter-spacing: 0.06em;
     color: #F1CDB3;
     padding-top: 5px;
+    text-decoration: none;
 }
 
 .footer_center {
@@ -556,7 +563,7 @@ h3 {
     display: inline-block;
 }
 
-.location_first {
+.location-first {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -569,28 +576,34 @@ h3 {
     margin-right: 19px;
 }
 
-.location_first p {
+.location-first p {
+    padding-top: 3px;
+}
+
+.location-first_link {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 2em;
     letter-spacing: 0.06em;
     color: #F1CDB3;
-    padding-top: 3px;
-
+    text-decoration: none;
 }
 
-.location_second {
+.location-second {
     display: flex;
     flex-direction: row;
 }
 
-.location_second p {
+.location-second p {
+    padding-top: 5px;
+}
+
+.location-second_link {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 2em;
     letter-spacing: 0.06em;
     color: #F1CDB3;
-    padding-top: 5px;
+    text-decoration: none;
 }
-
 
 .footer_image {
     position: relative;
