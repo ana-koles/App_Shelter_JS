@@ -83,7 +83,6 @@ header a {
     display: flex;
     flex-direction: row;
     list-style-type: none;
-    color: #CDCDCD;
 
 }
 
@@ -112,7 +111,9 @@ header a {
 .nav-menu_list li:last-child {
     margin-right: 0;
 }
+.nav-menu_list li:nth-child(2) {
 
+}
 
 .first-section_content {
     display: flex;
@@ -610,7 +611,7 @@ h3 {
     height: 310px;
     width: 100%;
     left: 127px;
-    bottom: 16px;
+    bottom: 20px;
     overflow: hidden;
 }
 
