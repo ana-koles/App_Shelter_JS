@@ -15,16 +15,18 @@
         <div class="container header-content">
 
             <div class="logo">
+                <a class="start-screen_link" href="../main/index.html#start-screen">
                 <h1>Cozy House</h1>
                 <p>Shelter for pets in Boston</p>
+                </a>
             </div>
 
             <nav>
                 <ul class="nav-menu_list">
                     <li class="nav-menu_item"><a class="nav-menu_link" href="../main/index.html">About the shelter</a></li>
-                    <li class="nav-menu_item"><a class="nav-menu_link" href="../main/index.html#help">Our pets</a></li>
-                    <li class="nav-menu_item">Help the shelter</li>
-                    <li class="nav-menu_item">Contacts</li>
+                    <li class="nav-menu_item">Our pets</li>
+                    <li class="nav-menu_item"><a class="nav-menu_link" href="../main/index.html#help">Help the shelter</a></li>
+                    <li class="nav-menu_item"><a class="nav-menu_link" href="#contacts">Contacts</a></li>
                 </ul>
             </nav>
         </div>
@@ -89,28 +91,22 @@
             </div>
 
             <!--  Номера страниц -->
-            <div class="button-pages">
-                <button type="button" class="button-page button_first-page">
-                    <p><<</p>
-                </button>
-                <button type="button" class="button-page button_previous-page">
-                    <p><</p>
-                </button>
-                <button type="button" class="button-page button_current-page">
-                    <p>1</p>
-                </button>
-                <button type="button" class="button-page button_next-page">
-                    <p>></p>
-                </button>
-                <button type="button" class="button-page button_last-page">
-                    <p>>></p>
-                </button>
+            <div class="pagination-wrapper">
+                <div class="pagination_content">
+                    <ul>
+                        <li><a class="pagination-link disabled link_first-page" href="#"><<</a></li>
+                        <li><a class="pagination-link disabled link_previous-page" href="#"><</a></li>
+                        <li><a class="pagination-link link_current-page" href="#">1</a></li>
+                        <li><a class="pagination-link link_next-page" href="#">></a></li>
+                        <li><a class="pagination-link link_last-page" href="#">>></a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- footer -->
-    <div class="footer">
+    <div class="footer" id="contacts">
         <div class="container footer-content">
             <!-- Левая часть футора -->
             <div class="footer-content_left-side">
