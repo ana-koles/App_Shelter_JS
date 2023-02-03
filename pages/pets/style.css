@@ -42,10 +42,6 @@ h1 {
     margin-bottom: 8px;
 }
 
-header {
-
-}
-
 header p {
     font-size: 1.3em;
     letter-spacing: 0.1em;
@@ -69,6 +65,12 @@ nav {
     margin-right: 36px;
     padding-bottom: 3px;
 }
+
+.nav-menu_link {
+    text-decoration: none;
+    font-size: 1em;
+}
+
 
 .nav-menu_item:nth-child(2) {
     border-bottom: 0.2em solid #F1CDB3;
@@ -200,11 +202,20 @@ nav {
     background-image: url("../../assests/images/footer-gradient-background.png");
     background-repeat: no-repeat;
     background-size: cover;
+    overflow: hidden;
+    position: relative;
+    bottom: 0px;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: row;
 }
 
 .footer-content_left-side {
     padding-top: 58px;
     padding-left: 30px;
+    width: 37%;
 }
 
 .footer-content_left-side h3 {
@@ -261,4 +272,76 @@ nav {
     padding-top: 5px;
     text-decoration: none;
 }
+
+.footer-content_center {
+    padding-top: 58px;
+    width: 36%;
+}
+
+.footer-content_center h3 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 3.5em;
+    line-height: 130%;
+    color: #FFFFFF;
+    letter-spacing: 0.06em;
+    margin-bottom: 30px;
+    font-weight: 400;
+}
+
+.location-first {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 34px;
+}
+
+.location-first_link {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2em;
+    letter-spacing: 0.06em;
+    color: #F1CDB3;
+    text-decoration: none;
+}
+
+.location-first img {
+    width: 22px;
+    height: 32px;
+    margin-right: 20px;
+}
+
+.location-second {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.location-second img {
+    width: 22px;
+    height: 32px;
+    margin-right: 20px;
+}
+
+.location-second_link {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2em;
+    letter-spacing: 0.06em;
+    color: #F1CDB3;
+    text-decoration: none;
+}
+
+
+.footer_image {
+    position: relative;
+    width: 300px;
+    height: 310px;
+}
+
+.footer_image img {
+    position: absolute;
+    bottom: 0;
+    top: 40px;
+    right: -6px;
+
+}
+
 

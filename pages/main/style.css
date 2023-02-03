@@ -113,9 +113,7 @@ header a {
 .nav-menu_list li:last-child {
     margin-right: 0;
 }
-.nav-menu_list li:nth-child(2) {
 
-}
 
 .first-section_content {
     display: flex;
