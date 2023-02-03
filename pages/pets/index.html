@@ -4,39 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="normalize" href="normalizes.css">
     <link rel="stylesheet" href="style.css">
     <title>Pets</title>
     <meta name="description" content="The best place to find a pet friend">
 </head>
 
 <body>
-    <!-- Первая секция -->
-    <section class="first-section">
-        <div class="container first-section_header">
-            <!-- Header и навигационное меню -->
-            <header>
-                <div class="logo">
-                    <h1>Cozy House</h1>
-                    <p>Shelter for pets in Boston</p>
-                </div>
+    <header class="header">
+        <div class="container header-content">
 
-                <nav>
-                    <ul class="nav-menu_list">
-                        <li class="nav-menu_item">About the shelter</li>
-                        <li class="nav-menu_item">Our pets</li>
-                        <li class="nav-menu_item">Help the shelter</li>
-                        <li class="nav-menu_item">Contacts</li>
-                    </ul>
-                </nav>
-            </header>
+            <div class="logo">
+                <h1>Cozy House</h1>
+                <p>Shelter for pets in Boston</p>
+            </div>
+
+            <nav>
+                <ul class="nav-menu_list">
+                    <li class="nav-menu_item">About the shelter</li>
+                    <li class="nav-menu_item">Our pets</li>
+                    <li class="nav-menu_item">Help the shelter</li>
+                    <li class="nav-menu_item">Contacts</li>
+                </ul>
+            </nav>
         </div>
-        <div class="container first-section_content" >
+    </header>
+    <!-- Основная секция -->
+    <section class="main-section">
+        <div class="container main-section_content" >
             <h2>Our friends who<br>
                 are looking for a house
             </h2>
 
             <!-- Карточки с собаками -->
-            <div class="first-section_cards">
+            <div class="main-section_cards">
                 <div class="card-pet">
                     <img src="../../assests/images/pets-katrine.png" alt="Katrine">
                     <p>Katrine</p>
@@ -83,13 +84,52 @@
                     <img src="../../assests/images/pets-freddy.png" alt="Freddy">
                     <p>Freddy</p>
                     <button type="button" class="card-button">Learn more</button>
-                </div> -
+                </div>
 
             </div>
+
+            <!--  Номера страниц -->
+            <div class="button-pages">
+                <button type="button" class="button-page button_first-page">
+                    <p><<</p>
+                </button>
+                <button type="button" class="button-page button_previous-page">
+                    <p><</p>
+                </button>
+                <button type="button" class="button-page button_current-page">
+                    <p>1</p>
+                </button>
+                <button type="button" class="button-page button_next-page">
+                    <p>></p>
+                </button>
+                <button type="button" class="button-page button_last-page">
+                    <p>>></p>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <div class="footer">
+        <div class="container footer-content">
+            <!-- Левая часть футора -->
+            <div class="footer-content_left-side">
+                <h3>For questions<br> and suggestions</h3>
+                <div class="mail">
+                    <img src="../../assests/icons/mail.png" alt="mail box">
+                    <p><a class="mail_link" href="mailto:email@shelter.com">email@shelter.com</a></p>
+                </div>
+                <div class="phone">
+                    <img src="../../assests/icons/phone.png" alt="phone">
+                    <p><a class="phone_link" href="tel:+136745677554">+13 674 567 75 54</a></p>
+                </div>
+            </div>
+
+            <!-- Центральная часть футора -->
+
         </div>
 
-
-    </section>
+    </div>
 
 </body>
 
