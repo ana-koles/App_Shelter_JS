@@ -127,7 +127,6 @@ h1 {
     display: block;
     flex: 50%;
     top: 166px;
-    padding-left: 5px;
 }
 
 .first-section_title {
@@ -676,6 +675,8 @@ h3 {
 
     .right-side_first-section {
         left:147px;
+        width: 569px;
+        bottom: 3px;
     }
 
     .first-section_dog-picture {
@@ -763,5 +764,46 @@ h3 {
     .footer {
         min-height: 639px;
     }
+
+    .footer_content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer_left-side_center-side_wrapper {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 63px;
+    }
+
+    .footer_left-side {
+        width: 47%;
+        padding-top: 32px;
+    }
+
+    .footer_center {
+        right: auto;
+        padding-top: 32px;
+    }
+
+
+    .footer_right-side {
+        width: 100%;
+        position: relative;
+        bottom: 0;
+   }
+
+    .footer_image {
+        margin: 0 auto;
+    }
+
+    .footer_image img {
+        right: auto;
+        top: auto;
+        overflow: hidden;
+
+    }
+
+
 
 }
