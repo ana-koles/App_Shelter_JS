@@ -419,7 +419,7 @@ h3 {
     left: 142px;
 }
 
-.right-side_fifth-section {
+.fifth-section_right-wrapper {
     display: block;
     width: 45%;
     padding-bottom: 10px;
@@ -448,7 +448,6 @@ h3 {
     display: flex;
     flex-direction: row;
     margin-bottom: 20px;
-
 }
 
 .block-account img {
@@ -480,6 +479,8 @@ h3 {
     line-height: 1.5em;
 }
 
+/* Шестая часть - footer */
+
 .footer {
     min-height: 350px;
     background-image: url("../../assests/images/footer-gradient-background.png");
@@ -498,13 +499,19 @@ h3 {
     align-items: flex-start;
 }
 
-.footer_left-side {
-    display: block;
-    padding-top: 58px;
-    width: 33.333333%;
+.footer_left-side_center-side_wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 65%;
     position: relative;
     left: 0;
     top: 0;
+}
+
+.footer_left-side {
+    display: block;
+    padding-top: 58px;
+    width: 40%;
 }
 
 .footer_left-side h3 {
@@ -559,12 +566,10 @@ h3 {
 
 .footer_center {
     display: block;
-    width: 28%;
     position: relative;
-    left: 0;
-    top: 0;
-    margin-left: 37px;
     padding-top: 58px;
+    right: 45px;
+    top: 0;
 }
 
 .footer_center h3 {
@@ -677,6 +682,7 @@ h3 {
         width: 569px;
     }
 
+    /* Вторая секция */
 
     .second-section {
         height: 981px;
@@ -713,5 +719,49 @@ h3 {
         margin-right: 16px;
     }
 
+    .fourth-section {
+        height: 779px;
+    }
+
+    .help-icons {
+        margin-right: 30px;
+        margin-left: 30px;
+        width: 170px;
+    }
+
+    /* Пятая секция */
+
+    .fifth-section {
+        height: 783px;
+    }
+
+    .fifth-section_content {
+        flex-direction: column-reverse;
+    }
+
+    .fifth-section_right-wrapper {
+        width: 100%;
+        left: auto;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        padding-left: 0;
+        position: relative;
+        right: 12px;
+        margin-bottom: 48px;
+    }
+
+    .left-side_fifth-section {
+        width: 100%;
+    }
+
+    .left-side_fifth-section {
+        position: relative;
+        right: 33px;
+    }
+
+    .footer {
+        min-height: 639px;
+    }
 
 }
