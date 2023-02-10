@@ -16,20 +16,22 @@
 
         <div class="container first-section_header">
         <!--Header и навигационное меню-->
-            <header>
-                <a href="#start-screen">
-                    <h1>Cozy House</h1>
-                    <p>Shelter for pets in Boston</p>
-                </a>
-                <div class="nav-menu">
-                    <ul class="nav-menu_list">
-                        <li class="nav-menu_item"><a class="menu-link_first" href="#about-shelter">About the Shelter</a></li>
-                        <li class="nav-menu_item"><a class="menu-link" href="#our-pets">Our pets</a></li>
-                        <li class="nav-menu_item"><a class="menu-link" href="#help">Help the shelter</a></li>
-                        <li class="nav-menu_item"><a class="menu-link" href="#contacts">Contacts</a></li>
-                    </ul>
-                </div>
-            </header>
+            <div class="header-container">
+                <header class="header">
+                    <a href="#start-screen">
+                        <h1>Cozy House</h1>
+                        <p>Shelter for pets in Boston</p>
+                    </a>
+                    <div class="nav-menu">
+                        <ul class="nav-menu_list">
+                            <li class="nav-menu_item"><a class="menu-link_first" href="#about-shelter">About the Shelter</a></li>
+                            <li class="nav-menu_item"><a class="menu-link" href="#our-pets">Our pets</a></li>
+                            <li class="nav-menu_item"><a class="menu-link" href="#help">Help the shelter</a></li>
+                            <li class="nav-menu_item"><a class="menu-link" href="#contacts">Contacts</a></li>
+                        </ul>
+                    </div>
+                </header>
+            </div>
         </div>
 
         <!-- Содержание первой секции -->
@@ -46,12 +48,15 @@
                     He or she will love you more than anybody else<br>
                     in the world, you will see!
                 </p>
-                    <button type="button" onclick='location.href="#our-pets"' name="make a friend" class="first-section_button">Make a friend</button>
+                    <div class="first-section_button-container">
+                        <button type="button" onclick='location.href="#our-pets"'
+                        name="make a friend" class="first-section_button">Make a friend</button>
+                    </div>
             </div>
 
             <!-- Правая часть -->
             <div class="right-side_first-section">
-                <img src="../../assests/images/start-screen-puppy.png" alt="Dog picture">
+                <img class="first-section_dog-picture" src="../../assests/images/start-screen-puppy.png" alt="Dog picture">
             </div>
         </div>
     </section>
@@ -63,27 +68,29 @@
 
             <!-- Левая часть -->
             <div class="left-side_second-section">
-                <img src="../../assests/images/about-pets.png" alt="Pets">
+                <img class="second-section_pets-img" src="../../assests/images/about-pets.png" alt="Pets">
             </div>
 
             <!-- Правая часть -->
-            <div class="right-side_second-section">
-                <h3>About the shelter<br> “Cozy House”</h3>
-                <p>
-                    Currently we have 121 dogs and 342 cats on our hands
-                    and<br> statistics show that only 20% of them will find
-                    a family. The<br> others will continue to live with us and
-                    will be waiting for a lucky<br> chance to become dearly loved.
-                </p>
-                <p>
-                    We feed our wards with the best food and make sure that
-                    they<br> do not get sick, feel comfortable (including
-                    psychologically) and<br> well. We are supported by 87 volunteers
-                    and 28 employees of<br> various skill levels. About 12% of
-                    the animals are taken by the<br> shelter staff. Taking care of
-                    the animals, they become attached<br> to the pets and would
-                    hardly ever leave them alone.
-                </p>
+            <div class="second-section_right-wrapper">
+                <div class="right-side_second-section">
+                    <h3>About the shelter<br> “Cozy House”</h3>
+                    <p>
+                        Currently we have 121 dogs and 342 cats on our hands
+                        and<br> statistics show that only 20% of them will find
+                        a family. The<br> others will continue to live with us and
+                        will be waiting for a lucky<br> chance to become dearly loved.
+                    </p>
+                    <p>
+                        We feed our wards with the best food and make sure that
+                        they<br> do not get sick, feel comfortable (including
+                        psychologically) and<br> well. We are supported by 87 volunteers
+                        and 28 employees of<br> various skill levels. About 12% of
+                        the animals are taken by the<br> shelter staff. Taking care of
+                        the animals, they become attached<br> to the pets and would
+                        hardly ever leave them alone.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
@@ -106,22 +113,24 @@
                     </button>
                 </div>
 
-                <div class="card-pet">
-                    <img src="../../assests/images/pets-katrine.png" alt="Katrine">
-                    <p class="card-name">Katrine</p>
-                    <button type="button" class="card-button" onclick='location.href="#our-pets"'>Learn more</button>
-                </div>
+                <div class="card-pet_wrapper">
+                    <div class="card-pet">
+                        <img src="../../assests/images/pets-katrine.png" alt="Katrine">
+                        <p class="card-name">Katrine</p>
+                        <button type="button" class="card-button" onclick='location.href="#our-pets"'>Learn more</button>
+                    </div>
 
-                <div class="card-pet">
-                    <img src="../../assests/images/pets-jennifer.png" alt="Jennifer">
-                    <p class="card-name">Jennifer</p>
-                    <button type="button" class="card-button"  onclick='location.href="#our-pets"'>Learn more</button>
-                </div>
+                    <div class="card-pet">
+                        <img src="../../assests/images/pets-jennifer.png" alt="Jennifer">
+                        <p class="card-name">Jennifer</p>
+                        <button type="button" class="card-button"  onclick='location.href="#our-pets"'>Learn more</button>
+                    </div>
 
-                <div class="card-pet">
-                    <img src="../../assests/images/pets-woody.png" alt="Woody">
-                    <p class="card-name">Woody</p>
-                    <button type="button" class="card-button"  onclick='location.href="#our-pets"'>Learn more</button>
+                    <div class="card-pet">
+                        <img src="../../assests/images/pets-woody.png" alt="Woody">
+                        <p class="card-name">Woody</p>
+                        <button type="button" class="card-button"  onclick='location.href="#our-pets"'>Learn more</button>
+                    </div>
                 </div>
 
                 <!-- Правый Слайдер -->

@@ -45,7 +45,7 @@ html {
     margin-bottom: 45px;;
 }
 
-header {
+.header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -63,14 +63,14 @@ h1 {
     padding-bottom: 10px;
 }
 
-header p {
+.header p {
     font-size: 1.3em;
     letter-spacing: 0.1em;
     padding-left: 5px;
 
 }
 
-header a {
+.header a {
     text-decoration: none;
     color: #F1CDB3;
 }
@@ -127,6 +127,7 @@ header a {
     display: block;
     flex: 50%;
     top: 166px;
+    padding-left: 5px;
 }
 
 .first-section_title {
@@ -171,10 +172,12 @@ header a {
     height: 728px;
 }
 
+/* Вторая секция */
+
 .second-section {
     height: 507px;
-
 }
+
 .second-section_content {
     display: flex;
     flex-direction: row;
@@ -195,7 +198,7 @@ header a {
 
 }
 
-.right-side_second-section {
+.second-section_right-wrapper {
     width: 55%;
     padding-bottom: 14px;
     position: relative;
@@ -242,6 +245,8 @@ h3 {
 
 }
 
+/* Третья секция */
+
 .third-section {
     height: 877px;
     background-color: #F6F6F6;
@@ -271,9 +276,16 @@ h3 {
     align-items: center;
 }
 
+.card-pet_wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .card-pet {
-    margin-left: 34px;
-    margin-right: 33px;
+    margin-left: 52px;
+    margin-right: 39px;
     width: 270px;
 }
 
@@ -469,7 +481,7 @@ h3 {
 }
 
 .footer {
-    height: 350px;
+    min-height: 350px;
     background-image: url("../../assests/images/footer-gradient-background.png");
     background-repeat: no-repeat;
     position: relative;
@@ -622,4 +634,84 @@ h3 {
 }
 
 
+@media (max-width: 1279px) {
+    .container {
+        width: 720px;
+    }
 
+    .first-section {
+        height: 1165px;
+        padding-top: 25px;
+        margin-bottom: 63px;
+        background-size: cover;
+    }
+
+    .nav-menu_item {
+        margin-right: 40px;
+    }
+
+
+    .first-section_content {
+        flex-direction: column;
+    }
+
+    .left-side_first-section {
+        top: 3px;
+        margin: 0 auto;
+        margin-bottom: 108px;
+    }
+
+    .first-section_button-container {
+        text-align: center;
+    }
+
+    .first-section_button {
+        position: relative;
+    }
+
+    .right-side_first-section {
+        left:147px;
+    }
+
+    .first-section_dog-picture {
+        width: 569px;
+    }
+
+
+    .second-section {
+        height: 981px;
+    }
+
+    .second-section_content {
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+
+    .second-section_right-wrapper {
+        width: 100%;
+        left: auto;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 63px;
+    }
+
+    .left-side_second-section {
+        width: 100%;
+    }
+
+    .left-side_second-section img {
+        left: 208px;
+    }
+
+    .card-pet_wrapper .card-pet:last-child {
+        display: none;
+    }
+
+    .card-pet {
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+
+
+}
