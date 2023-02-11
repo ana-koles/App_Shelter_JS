@@ -170,6 +170,7 @@ h1 {
 }
 .right-side_first_section img {
     height: 728px;
+    max-width: 100%;
 }
 
 /* Вторая секция */
@@ -193,10 +194,10 @@ h1 {
 }
 
 .left-side_second-section img {
-    height: 408px;
+    max-height: 408px;
     position: relative;
     left: 175px;
-
+    max-width: 100%;
 }
 
 .second-section_right-wrapper {
@@ -300,7 +301,9 @@ h3 {
     background-color: #F1CDB3;
 }
 
-
+.card-pet img {
+    max-width: 100%;
+}
 
 .card-name {
     text-align: center;
@@ -424,6 +427,7 @@ h3 {
     position: relative;
     padding-bottom: 7px;
     left: 142px;
+    max-width: 100%;
 }
 
 .fifth-section_right-wrapper {
@@ -633,16 +637,15 @@ h3 {
 
 .footer_image {
     position: relative;
-    width: 300px;
-    height: 310px;
+    max-width: 300px;
 }
+
 
 .footer_image img {
     position: absolute;
     bottom: 0;
     top: 40px;
-    right: -130px;
-
+    left: 122px;
 }
 
 
@@ -821,6 +824,7 @@ h3 {
 
     .first-section {
         height: 823px;
+        margin-bottom: 2.5em;
     }
 
     .header {
@@ -856,8 +860,8 @@ h3 {
     }
 
     .first-section_text {
-        padding-left: 10px;
-        padding-right: 10px;
+        padding-left: 1rem;
+        padding-right: 1rem;
         margin-bottom: 4.2rem;
     }
 
@@ -866,6 +870,52 @@ h3 {
     }
 
     .right-side_first-section {
-        left: 50px;
+        left: 5em;
+    }
+
+    /* Вторая часть */
+
+    .second-section {
+        height: 974px;
+    }
+
+    .second-section_content {
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+
+    .right-side_second-section {
+        text-align: center;
+    }
+
+    .second-section_text-title {
+        font-size: 2.5em;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .second-section_text {
+        font-size: 1.5em;
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+        text-align: justify;
+    }
+
+    .second-section_right-wrapper {
+        margin-bottom: 2.4rem;
+    } 
+
+    .second-section_text br {
+        display: none;
+    }
+
+    .left-side_second-section{
+        text-align: center;
+    }
+
+    .left-side_second-section img {
+        left: auto;
+        height: auto;
+        max-width: 260px;
     }
 }
