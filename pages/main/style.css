@@ -722,6 +722,8 @@ h3 {
         left: 208px;
     }
 
+    /* Третья секция */
+
     .card-pet_wrapper .card-pet:last-child {
         display: none;
     }
@@ -730,6 +732,8 @@ h3 {
         margin-left: 16px;
         margin-right: 16px;
     }
+
+    /* Четвертая секция */
 
     .fourth-section {
         height: 779px;
@@ -876,7 +880,7 @@ h3 {
     /* Вторая часть */
 
     .second-section {
-        height: 974px;
+        height: 950px;
     }
 
     .second-section_content {
@@ -903,7 +907,7 @@ h3 {
 
     .second-section_right-wrapper {
         margin-bottom: 2.4rem;
-    } 
+    }
 
     .second-section_text br {
         display: none;
@@ -918,4 +922,50 @@ h3 {
         height: auto;
         max-width: 260px;
     }
+
+    /* Третья секция */
+
+    .third-section {
+        height: 791px;
+    }
+
+    .third-section_cards {
+        position: relative;
+    }
+
+    .third-section_title {
+        margin-bottom: 4.3rem;
+    }
+
+    .third-section_title h3 {
+        font-size: 2.5em;
+        top: auto;
+        padding-top: 4.2rem;
+    }
+
+    .card-pet_wrapper .card-pet:not(:first-child) {
+        display: none;
+    }
+
+    .slider {
+        position: absolute;
+        bottom: -10rem;
+    }
+
+    .slider-left {
+        left: 7rem;
+    }
+
+    .slider-right {
+        right: 7rem;
+    }
+
+    .third-section_cards {
+        justify-content: center;
+    }
+
+    .second-section_button-container {
+        margin-top: 14.3em;
+    }
+
 }
