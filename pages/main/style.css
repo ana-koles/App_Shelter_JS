@@ -22,6 +22,7 @@ html {
     background-size: 100%;
     padding-top: 60px;
     margin-bottom: 80px;
+    overflow: hidden;
 
 }
 
@@ -175,6 +176,7 @@ h1 {
 
 .second-section {
     height: 507px;
+    overflow: hidden;
 }
 
 .second-section_content {
@@ -249,6 +251,7 @@ h3 {
 .third-section {
     height: 877px;
     background-color: #F6F6F6;
+    overflow: hidden;
 
 }
 
@@ -344,9 +347,11 @@ h3 {
     transform: rotate(-180deg);
 }
 
+/* Четвертая секция */
 
 .fourth-section {
     height: 611px;
+    overflow: hidden;
 }
 
 .fourth-section_title {
@@ -393,9 +398,12 @@ h3 {
     text-align: center;
 }
 
+/* Пятая секция */
+
 .fifth-section {
     height: 466px;
     background: #F6F6F6;
+    overflow: hidden;
 }
 
 .fifth-section_content {
@@ -801,9 +809,63 @@ h3 {
         right: auto;
         top: auto;
         overflow: hidden;
+    }
+}
 
+@media (min-width:320px) and (max-width:767px) {
+    .container {
+        width: 320px;
     }
 
+    /* Первая секция */
 
+    .first-section {
+        height: 823px;
+    }
 
+    .header {
+        padding-left: 0;
+    }
+
+    .nav-menu {
+        display: none;
+    }
+
+    .logo-link {
+        padding-left: 10px;
+    }
+
+    .first-section_content {
+        flex-direction: column;
+        margin: 0 auto;
+    }
+
+    .left-side_first-section {
+        text-align: center;
+        margin-bottom: 113px;
+    }
+
+    .first-section_title {
+        font-size: 2.5em;
+        letter-spacing: 0.06em ;
+        margin-bottom: 4.2rem;
+    }
+
+    .first-section_text br {
+        display: none;
+    }
+
+    .first-section_text {
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-bottom: 4.2rem;
+    }
+
+    .first-section_dog-picture {
+        width: 260px;
+    }
+
+    .right-side_first-section {
+        left: 50px;
+    }
 }
