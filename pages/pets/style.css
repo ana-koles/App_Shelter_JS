@@ -30,8 +30,8 @@ html {
 }
 
 .logo {
-    padding-top: 32px;
-    padding-left: 30px;
+    padding-top: 29px;
+    padding-left: 40px;
 }
 
 h1 {
@@ -50,8 +50,8 @@ header p {
 
 nav {
     position: absolute;
-    top: 52px;
-    right: 34px;
+    top: 50px;
+    right: 40px;
 }
 
 .nav-menu_list {
@@ -102,14 +102,14 @@ nav {
     flex-wrap: wrap;
     align-content: space-between;
     justify-content: center;
-    margin-bottom: 28px;
+    margin-bottom: 35px;
 }
 
 .card-pet {
     width: 270px;
     height: 435px;
-    margin-right: 40px;
-    margin-bottom: 31px;
+    margin-right: 39px;
+    margin-bottom: 27px;
 }
 
 .card-pet:hover {
@@ -195,7 +195,7 @@ nav {
     border: 0.1em solid #CDCDCD;
     height: 52px;
     width: 52px;
-    line-height: 50px;
+    line-height: 45px;
 }
 
 .pagination-link:hover {
@@ -244,15 +244,26 @@ nav {
 .footer-content {
     display: flex;
     flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
-.footer-content_left-side {
-    padding-top: 58px;
-    padding-left: 30px;
-    width: 37%;
+.footer_left-side_center-side_wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    position: relative;
+    left: 0;
+    top: 0;
 }
 
-.footer-content_left-side h3 {
+.footer_left-side {
+    padding-top: 55px;
+    padding-left: 40px;
+    width: 60%;
+}
+
+.footer_left-side h3 {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 3.5em;
     line-height: 130%;
@@ -261,8 +272,6 @@ nav {
     font-weight: 400;
     margin-bottom: 43px;
 }
-
-
 
 .mail {
     display: flex;
@@ -309,12 +318,14 @@ nav {
     text-decoration: none;
 }
 
-.footer-content_center {
-    padding-top: 58px;
-    width: 36%;
+.footer_center {
+    padding-top: 55px;
+    position: relative;
+    right: -4px;
+    top: 0;
 }
 
-.footer-content_center h3 {
+.footer_center h3 {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 3.5em;
     line-height: 130%;
@@ -369,15 +380,70 @@ nav {
 .footer_image {
     position: relative;
     width: 300px;
-    height: 310px;
 }
 
 .footer_image img {
     position: absolute;
     bottom: 0;
     top: 40px;
-    right: -6px;
+    right: -172px;
 
 }
 
+@media (max-width: 1279px) {
+    .container {
+        width: 720px;
+    }
 
+    .logo {
+        padding-top: 28px;
+        padding-left: 6px;
+    }
+
+    nav {
+        top: 49px;
+        right: 31px;
+    }
+
+    .main-section {
+        height: 1733px;
+    }
+
+    .main-section_content h2 {
+        padding-top: 80px;
+    }
+
+    .card-pet:first-child {
+         margin-left: 0;
+    }
+
+    .card-pet {
+        margin-right: 40px;
+        margin-bottom: 29px;
+    }
+
+    .card-pet:nth-child(2n) {
+        margin-right: 0px;
+    }
+
+    .card-pet:nth-child(7), .card-pet:nth-child(8) {
+        display: none;
+    }
+
+    .main-section_content h2 {
+        margin-bottom: 31px;
+    }
+
+    .main-section_cards {
+        margin-bottom: 13px;
+    }
+
+    /* footer */
+
+    .footer {
+        height: 639px;
+        position: relative;
+        bottom: 0;
+    }
+
+}
