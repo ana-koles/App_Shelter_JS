@@ -769,9 +769,6 @@ h3 {
 
     .left-side_fifth-section {
         width: 100%;
-    }
-
-    .left-side_fifth-section {
         position: relative;
         right: 33px;
     }
@@ -968,4 +965,118 @@ h3 {
         margin-top: 14.3em;
     }
 
+   /*  Четвертая секция */
+   .fourth-section {
+        height: 745px;
+    }
+
+    .fourth-section_title h3 {
+        font-size: 2.5em;
+        top: 4.2rem;
+    }
+
+    .fourth-section_title {
+        margin-bottom: 2.7rem;
+    }
+
+    .fourth-section_help-items {
+        display: table;
+    }
+
+    .help-icons {
+        margin-right: 1.5em;
+        margin-left: 1.5em;
+        max-width: 130px;
+        margin-bottom: 3em;
+        float: left;
+        width: 50%;
+    }
+
+    /* Clear floats after the columns */
+    .fourth-section_help-items:after {
+        clear: both;
+      }
+
+    .help-icons p {
+        font-size: 1.5rem;
+    }
+
+    .help-icons img {
+        height: 50px;
+        margin-bottom: 1.8em;
+    }
+
+    /* Пятая секция */
+
+    .fifth-section {
+        height: 542px;
+    }
+
+    .fifth-section_content {
+        flex-direction: column-reverse;
+        padding-top: 41px;
+    }
+
+    .right-side_fifth-section h3 {
+        font-size: 2.5em;
+        text-align: center;
+        margin-bottom: 2.1rem;
+    }
+
+    .right-side_fifth-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .fifth-section_right-wrapper {
+        right: auto;
+    }
+
+    .right-side_fifth-section h5 {
+        font-size: 1.5em;
+        text-align: center;
+        letter-spacing: 0;
+        margin-bottom: 2.3rem;
+    }
+
+    .block-account {
+        max-width: 281px;
+    }
+
+    .block-account_link {
+        font-size: 1.5em;
+
+    }
+
+    .block-account p {
+        top: 2px;
+        left: 7px;
+        margin: auto;
+    }
+
+    .card-instructions {
+        text-align: justify;
+        margin: auto 2rem;
+    }
+
+    .card-instructions br {
+        display: none;
+    }
+
+    .left-side_fifth-section {
+        display: flex;
+        justify-items: center;
+        right: auto;
+        max-width: 26em;
+    }
+
+    .left-side_fifth-section img {
+        width: 100%;
+        left: auto;
+    }
+
+    .fifth-section_right-wrapper {
+        margin-bottom: 3.4rem;
+    }
 }
