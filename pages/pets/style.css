@@ -492,3 +492,136 @@ nav {
     }
 
 }
+
+@media (max-width:767px) {
+    .container {
+        width: 320px;
+    }
+
+    .nav-menu {
+        display: none;
+    }
+
+    .logo {
+        padding-top: 30px;
+        padding-left: 9px;
+    }
+
+    .main-section_content h2 {
+        font-size: 2.5rem;
+        padding-top: 4.2rem;
+        padding-bottom: 1rem;
+    }
+
+    .main-section {
+        height: 1649px;
+    }
+
+    .card-pet {
+        margin-right: 0px;
+    }
+
+    .card-pet:not(:nth-child(-n+3)) {
+        display: none;
+    }
+
+    .pagination_content ul li {
+        margin-right: 0.7rem;
+    }
+
+    .main-section_cards {
+        margin-bottom: 1.6rem;
+    }
+
+
+    /* Footer */
+
+    .footer {
+        min-height: 809px;
+    }
+
+    .footer_left-side_center-side_wrapper {
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 4.2em;
+        padding-top: 0;
+
+    }
+
+    .footer_left-side h3 {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    .footer_left-side {
+        padding-left: 0;
+    }
+
+    .footer_left-side br {
+        display: none;
+    }
+
+    .footer_left-side {
+        width: 100%;
+        padding-top: 3rem;
+    }
+
+    .mail {
+        max-width: 251px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .phone {
+        max-width: 239px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .footer_center {
+        width: 100%;
+        right: auto;
+        padding-top: 4rem;
+    }
+
+    .footer_center h3 {
+        font-size: 2.5rem;
+        text-align: center;
+        margin-left: 2rem;
+        margin-right: 2rem;
+        margin-bottom: 4rem;
+    }
+
+    .footer_center br {
+        display: none;
+    }
+
+    .location {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .location-first {
+        margin-bottom: 3.8rem;
+    }
+
+    .location-first p {
+        text-align: left;
+    }
+
+    .footer_image {
+        max-width: 260px;
+        height: 269px;
+        position: relative;
+    }
+
+    .footer_image img {
+        position: absolute;
+        max-height:100%;
+        max-width: 100%;
+        left: auto;
+        bottom: -1px;
+        top: 0;
+    }
+
+}
