@@ -34,31 +34,31 @@ html {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding-top: 31px;
-    padding-left: 38px;
-    margin-bottom: 56px;
+    padding-top: 3.1rem;
+    padding-left: 3.8rem;
+    margin-bottom: 5.6rem;
 
 }
 
 h1 {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 3.2em;
+    font-size: 3.2rem;
     font-weight: 400;
     letter-spacing: 0.06em;
-    margin-bottom: 8px;
+    margin-bottom: 0.8rem;
 }
 
 header p {
-    font-size: 1.3em;
+    font-size: 1.3rem;
     letter-spacing: 0.1em;
-    padding-left: 5px;
+    padding-left: 0.5rem;
 }
 
 
 nav {
     position: absolute;
-    top: 50px;
-    right: 40px;
+    top: 5rem;
+    right: 4rem;
 }
 
 .nav-menu_list {
@@ -68,19 +68,19 @@ nav {
 
 .nav-menu_item {
     list-style-type: none;
-    font-size: 1.5em;
-    margin-right: 36px;
+    font-size: 1.5rem;
+    margin-right: 3.6rem;
     padding-bottom: 3px;
 }
 
 .nav-menu_link, .start-screen_link {
     text-decoration: none;
-    font-size: 1em;
+    font-size: 1.5rem;
 }
 
 
 .nav-menu_item:nth-child(2) {
-    border-bottom: 0.2em solid #F1CDB3;
+    border-bottom: 0.2rem solid #F1CDB3;
 }
 
 .nav-menu_item:last-child {
@@ -96,14 +96,14 @@ nav {
 }
 
 .main-section_content h2 {
-    font-size: 3.5em;
+    font-size: 3.5rem;
     font-family: Georgia, 'Times New Roman', Times, serif;
     text-align: center;
     font-weight: 400;
-    padding-top: 83px;
+    padding-top: 8.3rem;
     letter-spacing: 0.06em;
     line-height: 1.27em;
-    margin-bottom: 59px;
+    margin-bottom: 5.9rem;
 }
 
 .main-section_cards {
@@ -111,14 +111,14 @@ nav {
     flex-wrap: wrap;
     align-content: space-between;
     justify-content: center;
-    margin-bottom: 35px;
+    margin-bottom: 3.5rem;
 }
 
 .card-pet {
     width: 270px;
     height: 435px;
-    margin-right: 39px;
-    margin-bottom: 27px;
+    margin-right: 3.9rem;
+    margin-bottom: 2.7rem;
 }
 
 .card-pet:hover {
@@ -147,14 +147,14 @@ nav {
 }
 
 .card-pet img {
-    margin-bottom: 29px;
+    margin-bottom: 2.9rem;
 }
 
 .card-pet p {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 2em;
+    font-size: 2rem;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 3rem;
     letter-spacing: 0.06em;
 }
 
@@ -267,14 +267,14 @@ nav {
 }
 
 .footer_left-side {
-    padding-top: 55px;
-    padding-left: 40px;
+    padding-top: 5.5rem;
+    padding-left: 4rem;
     width: 60%;
 }
 
 .footer_left-side h3 {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 3.5em;
+    font-size: 3.5rem;
     line-height: 130%;
     color: #FFFFFF;
     letter-spacing: 0.06em;
@@ -292,14 +292,14 @@ nav {
 .mail img {
     width: 40px;
     height: 26px;
-    margin-right: 19px;
+    margin-right: 1.9rem;
 }
 
 
 .mail a {
     text-decoration: none;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 2em;
+    font-size: 2rem;
     line-height: 115%;
     letter-spacing: 0.06em;
     color: #F1CDB3;
@@ -315,20 +315,20 @@ nav {
 .phone img {
     width: 40px;
     height: 32px;
-    margin-right: 19px;
+    margin-right: 1.9rem;
 }
 
 .phone a {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 2em;
+    font-size: 2rem;
     letter-spacing: 0.06em;
     color: #F1CDB3;
-    padding-top: 5px;
+    padding-top: 0.5rem;
     text-decoration: none;
 }
 
 .footer_center {
-    padding-top: 55px;
+    padding-top: 5.5rem;
     position: relative;
     right: -4px;
     top: 0;
@@ -336,11 +336,11 @@ nav {
 
 .footer_center h3 {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 3.5em;
+    font-size: 3.5rem;
     line-height: 130%;
     color: #FFFFFF;
     letter-spacing: 0.06em;
-    margin-bottom: 30px;
+    margin-bottom: 3rem;
     font-weight: 400;
 }
 
@@ -348,12 +348,12 @@ nav {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-bottom: 34px;
+    margin-bottom: 3.4rem;
 }
 
 .location-first_link {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 2em;
+    font-size: 2rem;
     letter-spacing: 0.06em;
     color: #F1CDB3;
     text-decoration: none;
@@ -362,7 +362,7 @@ nav {
 .location-first img {
     width: 22px;
     height: 32px;
-    margin-right: 20px;
+    margin-right: 2rem;
 }
 
 .location-second {
@@ -374,12 +374,12 @@ nav {
 .location-second img {
     width: 22px;
     height: 32px;
-    margin-right: 20px;
+    margin-right: 2rem;
 }
 
 .location-second_link {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 2em;
+    font-size: 2rem;
     letter-spacing: 0.06em;
     color: #F1CDB3;
     text-decoration: none;
@@ -405,8 +405,8 @@ nav {
     }
 
     .header-container {
-        padding-top: 30px;
-        padding-left: 5px;
+        padding-top: 3rem;
+        padding-left: 0.5rem;
 
     }
 
@@ -420,7 +420,7 @@ nav {
     }
 
     .main-section_content h2 {
-        padding-top: 80px;
+        padding-top: 8rem;
     }
 
     .card-pet:first-child {
@@ -428,8 +428,8 @@ nav {
     }
 
     .card-pet {
-        margin-right: 40px;
-        margin-bottom: 29px;
+        margin-right: 4rem;
+        margin-bottom: 2.9rem;
     }
 
     .card-pet:nth-child(2n) {
@@ -441,11 +441,11 @@ nav {
     }
 
     .main-section_content h2 {
-        margin-bottom: 31px;
+        margin-bottom: 3.1rem;
     }
 
     .main-section_cards {
-        margin-bottom: 13px;
+        margin-bottom: 1.3rem;
     }
 
     /* footer */
@@ -465,7 +465,7 @@ nav {
     .footer_left-side_center-side_wrapper {
         width: 100%;
         top: 0;
-        padding-top: 30px;
+        padding-top: 3rem;
     }
 
     .footer_left-side {
@@ -509,10 +509,9 @@ nav {
     }
 
     .header-container {
-
-        padding-left: 10px;
+        padding-left: 1rem;
     }
-    
+
     .header {
         padding-left: 0;
     }
@@ -584,7 +583,7 @@ nav {
     }
 
     .nav-menu_item {
-        font-size: 3em;
+        font-size: 3rem;
         color: #CDCDCD;
     }
 
@@ -642,7 +641,7 @@ nav {
     .footer_left-side_center-side_wrapper {
         flex-direction: column;
         width: 100%;
-        margin-bottom: 4.2em;
+        margin-bottom: 4.2rem;
         padding-top: 0;
 
     }
