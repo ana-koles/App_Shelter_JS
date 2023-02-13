@@ -20,8 +20,8 @@ html {
     background-image: url("../../assests/images/start-screen-gradient-background.png"), url("../../assests/images/start-screen-gradient-background.png");
     height: 908px;
     background-size: 100%;
-    padding-top: 60px;
-    margin-bottom: 80px;
+    padding-top: 6rem;
+    margin-bottom: 8rem;
     overflow: hidden;
 
 }
@@ -43,7 +43,7 @@ html {
 }
 
 .first-section_header {
-    margin-bottom: 45px;;
+    margin-bottom: 4.5rem;;
 }
 
 .header {
@@ -53,20 +53,20 @@ html {
     align-items: center;
     padding-top: 4px;
     padding-left: 3px;
-    margin-bottom: 56px;
+    margin-bottom: 5.6rem;
 }
 
 h1 {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: 400;
-    font-size: 3.2em;
+    font-size: 3.2rem;
     letter-spacing: 0.06em;
-    padding-bottom: 10px;
+    padding-bottom: 1rem;
     color: #F1CDB3;
 }
 
 .header p {
-    font-size: 1.3em;
+    font-size: 1.3rem;
     letter-spacing: 0.1em;
     padding-left: 5px;
     color: #FFFFFF;
@@ -91,15 +91,15 @@ h1 {
 }
 
 .nav-menu_item {
-    margin-right: 33px;
-    font-size: 1.5em;
+    margin-right: 3.3rem;
+    font-size: 1.5rem;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 400;
     color: #CDCDCD;
 }
 
 .menu-link {
-    font-size: 1em;
+    font-size: 1.5rem;
     color: #CDCDCD;
 }
 
@@ -109,7 +109,7 @@ h1 {
 
 .menu-link_first {
     color: #FAFAFA;
-    font-size: 1em;
+    font-size: 1.5rem;
 }
 
 .nav-menu_list li:last-child {
@@ -133,9 +133,9 @@ h1 {
 
 .first-section_title {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 4.4em;
+    font-size: 4.4rem;
     color: #FFFFFF;
-    margin-bottom: 46px;
+    margin-bottom: 4.6rem;
     position: relative;
     font-weight: 400;
     line-height: 1.26em;
@@ -153,16 +153,13 @@ h1 {
     height: 52px;
     background: #F1CDB3;
     border-radius: 100px;
-    font-size: 1.7em;
+    font-size: 1.7rem;
     color: #292929;
     border: none;
     position: absolute;
     width: 207px;
     letter-spacing: 0.1rem;
     font-family: Georgia, 'Times New Roman', Times, serif;
-/*     display: inline-block
-    width: 100% */
-
 }
 
 .right-side_first-section {
@@ -203,7 +200,7 @@ h1 {
 
 .second-section_right-wrapper {
     width: 55%;
-    padding-bottom: 14px;
+    padding-bottom: 1.4rem;
     position: relative;
     left: 55px;
 }
@@ -211,19 +208,19 @@ h1 {
 h3 {
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: #545454;
-    font-size: 3.5em;
+    font-size: 3.5rem;
     font-weight: 400;
 }
 
 .right-side_second-section h3 {
-    padding-top: 16px;
+    padding-top: 1.6rem;
     padding-bottom: -1px;
     letter-spacing: 0.06em;
     line-height: 1.3em;
 }
 
 .right-side_second-section p {
-    font-size: 1.5em;
+    font-size: 1.5rem;
     color: #4C4C4C;
     line-height: 1.6em;
     padding-top: 25px;
@@ -235,12 +232,12 @@ h3 {
 
 .second-section_button {
     display: block;
-    margin: 90px auto 0 auto;
+    margin: 9rem auto 0 auto;
     height: 52px;
     width: 261px;
     background: #F1CDB3;
     border-radius: 100px;
-    font-size: 1.7em;
+    font-size: 1.7rem;
     color: #292929;
     border: none;
     letter-spacing: 0.1rem;
@@ -270,7 +267,7 @@ h3 {
     top: 85px;
     line-height: 1.25em;
     letter-spacing: 0.06em;
-    margin-left: 5px;
+    margin-left: 0.5rem;
 }
 
 .third-section_cards {
@@ -288,8 +285,8 @@ h3 {
 }
 
 .card-pet {
-    margin-left: 52px;
-    margin-right: 39px;
+    margin-left: 5.2rem;
+    margin-right: 3.9rem;
     width: 270px;
 }
 
@@ -309,10 +306,10 @@ h3 {
 .card-name {
     text-align: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 2em;
+    font-size: 2rem;
     letter-spacing: 0.06em;
-    margin-top: 28px;
-    margin-bottom: 31px;
+    margin-top: 2.8rem;
+    margin-bottom: 3.1rem;
 }
 
 .card-button {
@@ -321,7 +318,7 @@ h3 {
     border: 0.2em solid #F1CDB3;
     border-radius: 100px;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 1.7em;
+    font-size: 1.7rem;
     display: block;
     margin: 0 auto;
     letter-spacing: 0.06em;
@@ -360,7 +357,7 @@ h3 {
 
 .fourth-section_title {
     height: 120px;
-    margin-bottom: 111px;
+    margin-bottom: 11.1rem;
 }
 
 .fourth-section_title h3 {
@@ -382,21 +379,21 @@ h3 {
 .help-icons {
     display: inline-block;
     text-align: center;
-    margin-left: 60px;
-    margin-right: 60px;
-    margin-bottom: 55px;
+    margin-left: 6rem;
+    margin-right: 6rem;
+    margin-bottom: 5.5rem;
 }
 
 
 .help-icons img {
-    margin-bottom: 28px;
+    margin-bottom: 2.8rem;
     display: inline-block;
     height: 60px;
 }
 
 .help-icons p {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 2em;
+    font-size: 2rem;
     letter-spacing: 0.06em;
     color: #545454;
     text-align: center;
@@ -415,7 +412,7 @@ h3 {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding-top: 83px;
+    padding-top: 8.3rem;
     width: 100%;
 }
 
@@ -434,22 +431,22 @@ h3 {
 .fifth-section_right-wrapper {
     display: block;
     width: 45%;
-    padding-bottom: 10px;
-    padding-left: 20px;
+    padding-bottom: 1rem;
+    padding-left: 2rem;
 }
 
 .right-side_fifth-section h3 {
     letter-spacing: 0.06em;
     line-height: 130%;
-    margin-bottom: 19px;
+    margin-bottom: 1.9rem;
 }
 
 .right-side_fifth-section h5 {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 1.65em;
+    font-size: 1.65rem;
     font-weight: 400;
     letter-spacing: 0.01em;
-    margin-bottom: 19px;
+    margin-bottom: 1.9rem;
 }
 
 .block-account {
@@ -459,7 +456,7 @@ h3 {
     border-radius: 9px;
     display: flex;
     flex-direction: row;
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
 }
 
 .block-account img {
@@ -478,14 +475,14 @@ h3 {
 
 .block-account_link {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 2em;
+    font-size: 2rem;
     color: #545454;
     text-decoration: none;
     letter-spacing: 0.06em;
 }
 
 .card-instructions {
-    font-size: 1.2em;
+    font-size: 1.2rem;
     font-style: italic;
     color: #B2B2B2;
     line-height: 1.5em;
@@ -522,35 +519,35 @@ h3 {
 
 .footer_left-side {
     display: block;
-    padding-top: 58px;
+    padding-top: 5.8rem;
     width: 40%;
 }
 
 .footer_left-side h3 {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 3.5em;
+    font-size: 3.5rem;
     line-height: 130%;
     color: #FFFFFF;
     letter-spacing: 0.06em;
-    margin-bottom: 43px;
+    margin-bottom: 4.3rem;
 }
 
 .mail {
     display: flex;
     flex-direction: row;
-    margin-bottom: 42px;
+    margin-bottom: 4.2rem;
 }
 
 .mail img {
     width: 40px;
     height: 26px;
-    margin-right: 19px;
+    margin-right: 1.9rem;
 }
 
 .mail_link {
     text-decoration: none;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 2em;
+    font-size: 2rem;
     line-height: 115%;
     letter-spacing: 0.06em;
     color: #F1CDB3;
@@ -564,33 +561,33 @@ h3 {
 .phone img {
     width: 40px;
     height: 32px;
-    margin-right: 19px;
+    margin-right: 1.9rem;
 }
 
 .phone_link {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 2em;
+    font-size: 2rem;
     letter-spacing: 0.06em;
     color: #F1CDB3;
-    padding-top: 5px;
+    padding-top: 0.5rem;
     text-decoration: none;
 }
 
 .footer_center {
     display: block;
     position: relative;
-    padding-top: 58px;
+    padding-top: 5.8rem;
     right: 45px;
     top: 0;
 }
 
 .footer_center h3 {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 3.5em;
+    font-size: 3.5rem;
     line-height: 130%;
     color: #FFFFFF;
     letter-spacing: 0.06em;
-    margin-bottom: 30px;
+    margin-bottom: 3rem;
     display: inline-block;
 }
 
@@ -598,13 +595,13 @@ h3 {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-bottom: 33px;
+    margin-bottom: 3.3rem;
 }
 
 .location_icon {
     width: 22px;
     height: 32px;
-    margin-right: 19px;
+    margin-right: 1.9rem;
 }
 
 .location-first p {
@@ -613,7 +610,7 @@ h3 {
 
 .location-first_link {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 2em;
+    font-size: 2rem;
     letter-spacing: 0.06em;
     color: #F1CDB3;
     text-decoration: none;
@@ -625,12 +622,12 @@ h3 {
 }
 
 .location-second p {
-    padding-top: 5px;
+    padding-top: 0.5rem;
 }
 
 .location-second_link {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 2em;
+    font-size: 2rem;
     letter-spacing: 0.06em;
     color: #F1CDB3;
     text-decoration: none;
@@ -640,7 +637,6 @@ h3 {
     position: relative;
     max-width: 300px;
 }
-
 
 .footer_image img {
     position: absolute;
@@ -654,18 +650,18 @@ h3 {
     .container {
         width: 720px;
     }
-    
+
 
     .first-section {
         height: 1165px;
-        padding-top: 25px;
-        margin-bottom: 63px;
+        padding-top: 2.5rem;
+        margin-bottom: 6.3rem;
         background-size: cover;
     }
 
 
     .nav-menu_item {
-        margin-right: 40px;
+        margin-right: 4rem;
     }
 
 
@@ -714,7 +710,7 @@ h3 {
         margin: 0 auto;
         display: flex;
         justify-content: center;
-        margin-bottom: 63px;
+        margin-bottom: 6.3rem;
     }
 
     .left-side_second-section {
@@ -732,8 +728,8 @@ h3 {
     }
 
     .card-pet {
-        margin-left: 16px;
-        margin-right: 16px;
+        margin-left: 1.6rem;
+        margin-right: 1.6rem;
     }
 
     /* Четвертая секция */
@@ -743,8 +739,8 @@ h3 {
     }
 
     .help-icons {
-        margin-right: 30px;
-        margin-left: 30px;
+        margin-right: 3.0rem;
+        margin-left: 3.0rem;
         width: 170px;
     }
 
@@ -767,7 +763,7 @@ h3 {
         padding-left: 0;
         position: relative;
         right: 12px;
-        margin-bottom: 48px;
+        margin-bottom: 4.8rem;
     }
 
     .left-side_fifth-section {
@@ -788,17 +784,17 @@ h3 {
     .footer_left-side_center-side_wrapper {
         width: 100%;
         justify-content: center;
-        margin-bottom: 63px;
+        margin-bottom: 6.3rem;
     }
 
     .footer_left-side {
         width: 47%;
-        padding-top: 32px;
+        padding-top: 3.2rem;
     }
 
     .footer_center {
         right: auto;
-        padding-top: 32px;
+        padding-top: 3.2rem;
     }
 
 
@@ -809,12 +805,20 @@ h3 {
    }
 
     .footer_image {
+        max-width: 300px;
+        height: 310px;
         margin: 0 auto;
+        position: relative;
     }
 
     .footer_image img {
+        position: absolute;
+        max-height:100%;
+        max-width: 100%;
+        left: auto;
+        bottom: -1px;
         right: auto;
-        top: auto;
+        top: 0px;
         overflow: hidden;
     }
 }
@@ -828,7 +832,7 @@ h3 {
 
     .first-section {
         height: 823px;
-        margin-bottom: 2.5em;
+        margin-bottom: 2.5rem;
     }
 
     .header {
@@ -902,7 +906,7 @@ h3 {
     }
 
     .nav-menu_item {
-        font-size: 3em;
+        font-size: 3rem;
         margin-right: 0;
         text-align: center;
         color: #CDCDCD;
@@ -918,7 +922,7 @@ h3 {
     }
 
     .logo-link {
-        padding-left: 10px;
+        padding-left: 1rem;
         z-index: 15;
 
     }
@@ -934,7 +938,7 @@ h3 {
     }
 
     .first-section_title {
-        font-size: 2.5em;
+        font-size: 2.5rem;
         letter-spacing: 0.06em ;
         margin-bottom: 4.2rem;
     }
@@ -954,7 +958,7 @@ h3 {
     }
 
     .right-side_first-section {
-        left: 5em;
+        left: 50px;
     }
 
     /* Вторая часть */
@@ -973,13 +977,13 @@ h3 {
     }
 
     .second-section_text-title {
-        font-size: 2.5em;
+        font-size: 2.5rem;
         padding-left: 1rem;
         padding-right: 1rem;
     }
 
     .second-section_text {
-        font-size: 1.5em;
+        font-size: 1.5rem;
         padding-left: 2.5rem;
         padding-right: 2.5rem;
         text-align: justify;
@@ -1018,7 +1022,7 @@ h3 {
     }
 
     .third-section_title h3 {
-        font-size: 2.5em;
+        font-size: 2.5rem;
         top: auto;
         padding-top: 4.2rem;
     }
@@ -1045,7 +1049,7 @@ h3 {
     }
 
     .second-section_button-container {
-        margin-top: 14.3em;
+        margin-top: 14.3rem;
     }
 
    /*  Четвертая секция */
@@ -1054,7 +1058,7 @@ h3 {
     }
 
     .fourth-section_title h3 {
-        font-size: 2.5em;
+        font-size: 2.5rem;
         top: 4.2rem;
     }
 
@@ -1067,10 +1071,10 @@ h3 {
     }
 
     .help-icons {
-        margin-right: 1.5em;
-        margin-left: 1.5em;
+        margin-right: 1.5rem;
+        margin-left: 1.5rem;
         max-width: 130px;
-        margin-bottom: 3em;
+        margin-bottom: 3rem;
         float: left;
         width: 50%;
     }
@@ -1097,11 +1101,11 @@ h3 {
 
     .fifth-section_content {
         flex-direction: column-reverse;
-        padding-top: 41px;
+        padding-top: 4.1rem;
     }
 
     .right-side_fifth-section h3 {
-        font-size: 2.5em;
+        font-size: 2.5rem;
         text-align: center;
         margin-bottom: 2.1rem;
     }
@@ -1117,7 +1121,7 @@ h3 {
     }
 
     .right-side_fifth-section h5 {
-        font-size: 1.5em;
+        font-size: 1.5rem;
         text-align: center;
         letter-spacing: 0;
         margin-bottom: 2.3rem;
@@ -1128,7 +1132,7 @@ h3 {
     }
 
     .block-account_link {
-        font-size: 1.5em;
+        font-size: 1.5rem;
 
     }
 
@@ -1176,7 +1180,7 @@ h3 {
     .footer_left-side_center-side_wrapper {
         flex-direction: column;
         width: 100%;
-        margin-bottom: 4.2em;
+        margin-bottom: 4.2rem;
     }
 
     .footer_left-side {
@@ -1197,7 +1201,7 @@ h3 {
     }
 
     .footer_left-side h3, .footer_center h3 {
-        font-size: 2.5em;
+        font-size: 2.5rem;
         text-align: center;
     }
 
