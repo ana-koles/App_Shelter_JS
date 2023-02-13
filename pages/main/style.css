@@ -53,7 +53,7 @@ html {
     align-items: center;
     padding-top: 4px;
     padding-left: 3px;
-    margin-bottom: 56px;;
+    margin-bottom: 56px;
 }
 
 h1 {
@@ -62,18 +62,19 @@ h1 {
     font-size: 3.2em;
     letter-spacing: 0.06em;
     padding-bottom: 10px;
+    color: #F1CDB3;
 }
 
 .header p {
     font-size: 1.3em;
     letter-spacing: 0.1em;
     padding-left: 5px;
+    color: #FFFFFF;
 
 }
 
 .header a {
     text-decoration: none;
-    color: #F1CDB3;
 }
 
 .nav-menu {
@@ -653,6 +654,7 @@ h3 {
     .container {
         width: 720px;
     }
+    
 
     .first-section {
         height: 1165px;
@@ -879,7 +881,8 @@ h3 {
 
 
     .nav-menu {
-        top: -27px;
+        position: fixed;
+        top: 0;
         right: -100%;
         height: 100vh;
         background: #292929;
@@ -902,10 +905,12 @@ h3 {
         font-size: 3em;
         margin-right: 0;
         text-align: center;
+        color: #CDCDCD;
     }
 
     .nav-menu_list li:first-child {
         border-bottom: 0.1em solid #F1CDB3;
+        color: #FAFAFA;
     }
 
     .nav-menu_active {

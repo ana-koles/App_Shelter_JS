@@ -29,9 +29,15 @@ html {
     height: 120px;
 }
 
-.logo {
-    padding-top: 29px;
-    padding-left: 40px;
+.header-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 31px;
+    padding-left: 38px;
+    margin-bottom: 56px;
+
 }
 
 h1 {
@@ -45,8 +51,9 @@ h1 {
 header p {
     font-size: 1.3em;
     letter-spacing: 0.1em;
-    padding-left: 4px;
+    padding-left: 5px;
 }
+
 
 nav {
     position: absolute;
@@ -79,6 +86,8 @@ nav {
 .nav-menu_item:last-child {
     margin-right: 0px;
 }
+
+/* Основная секция */
 
 .main-section {
     height: 1342px;
@@ -395,9 +404,10 @@ nav {
         width: 720px;
     }
 
-    .logo {
-        padding-top: 28px;
-        padding-left: 6px;
+    .header-container {
+        padding-top: 30px;
+        padding-left: 5px;
+
     }
 
     nav {
@@ -498,13 +508,102 @@ nav {
         width: 320px;
     }
 
+    .header-container {
+
+        padding-left: 10px;
+    }
+    
+    .header {
+        padding-left: 0;
+    }
+
+    /* hamburger */
+
+    .hamburger {
+        width: 30px;
+        position: absolute;
+        top: 48px;
+        right: 54px;
+        height: 22px;
+    }
+
+    .hamburger span {
+        height: 2px;
+        width: 100%;
+        display: block;
+        background: #000000;
+        margin-bottom: 8px;
+        position: relative;
+        transition: 1s all;
+    }
+
+    .hamburger span:last-child {
+        margin-bottom: 0;
+    }
+
+    .hamburger_active span:nth-child(1) {
+        transform: translateX(-1px) rotate(-90deg);
+        right: 8px;
+        top: 10px;
+        margin-left: -1px;
+    }
+
+    .hamburger_active span:nth-child(2) {
+        transform: translateX(-1px) rotate(-90deg);
+        margin-left: 1px;
+
+    }
+
+    .hamburger_active span:nth-child(3) {
+        transform: translateX(-1px) rotate(-90deg);
+        left: 8px;
+        bottom: 10px;
+        margin-left: 3px;
+    }
+
+
     .nav-menu {
-        display: none;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        background: #292929;
+        width: 320px;
+        z-index: 10;
+        transition: 0.5s all;
+    }
+
+    .nav-menu_list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 100%;
+        padding-left: 0;
+        margin-top: 100px;
+    }
+
+    .nav-menu_item {
+        font-size: 3em;
+        color: #CDCDCD;
+    }
+
+    .nav-menu_link {
+        color: #CDCDCD;
+    }
+
+    .nav-menu_item:nth-child(2) {
+        border-bottom: 0.1em solid #F1CDB3;
+        color: #FAFAFA;
+    }
+
+    .nav-menu_active {
+        right: 0;
     }
 
     .logo {
-        padding-top: 30px;
-        padding-left: 9px;
+        top: 30px;
+        left: 10px;
     }
 
     .main-section_content h2 {
@@ -624,4 +723,10 @@ nav {
         top: 0;
     }
 
+}
+
+@media (max-width: 319px) {
+    .container {
+        width: 100%;
+    }
 }
