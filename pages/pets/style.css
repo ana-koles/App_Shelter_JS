@@ -1,3 +1,5 @@
+/* Pets page */
+
 * {
     box-sizing: border-box;
     margin: 0 0;
@@ -516,9 +518,9 @@ nav {
         padding-left: 0;
     }
 
-    /* hamburger */
+    /* burger */
 
-    .hamburger {
+    .burger {
         width: 30px;
         position: absolute;
         top: 48px;
@@ -526,7 +528,7 @@ nav {
         height: 22px;
     }
 
-    .hamburger span {
+    .burger span {
         height: 2px;
         width: 100%;
         display: block;
@@ -536,18 +538,18 @@ nav {
         transition: 1s all;
     }
 
-    .hamburger span:last-child {
+    .burger span:last-child {
         margin-bottom: 0;
     }
 
-    .hamburger_active span:nth-child(1) {
+    .burger_active span:nth-child(1) {
         transform: translateX(-1px) rotate(-90deg);
         right: 8px;
         top: 10px;
         margin-left: -1px;
     }
 
-    .hamburger_active span:nth-child(2) {
+    .burger_active span:nth-child(2) {
         transform: translateX(-1px) rotate(-90deg);
         margin-left: 1px;
 
