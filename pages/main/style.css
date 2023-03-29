@@ -17,7 +17,7 @@ html {
 
 .first-section {
     position: relative;
-    background-image: url("../../assests/images/start-screen-gradient-background.png"), url("../../assests/images/start-screen-gradient-background.png");
+    background-image: url("../../assets/images/start-screen-gradient-background.png"), url("../../assets/images/start-screen-gradient-background.png");
     height: 908px;
     background-size: 100%;
     padding-top: 6rem;
@@ -203,6 +203,7 @@ h1 {
     padding-bottom: 1.4rem;
     position: relative;
     left: 55px;
+    overflow: hidden;
 }
 
 h3 {
@@ -255,7 +256,7 @@ h3 {
 
 .third-section_title {
     margin: 0 auto;
-    margin-bottom: 144px;
+    margin-bottom: 14.4rem;
 }
 
 
@@ -276,16 +277,49 @@ h3 {
 }
 
 .card-pet_wrapper {
+    width: 990px;
+    display: flex;
+    overflow: hidden;
+}
+
+.carousel {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    left: -1080px;
+}
+
+/* animation */
+
+@keyframes move-left {
+    from{left: -1080px;}
+    to{left:0px;}
+}
+
+.transition-left {
+    animation-name: move-left;
+    animation-duration: 1s;
+}
+
+@keyframes move-right {
+    from{left: -1080px;}
+    to{left: -2160px}
+}
+
+.transition-right {
+    animation-name: move-right;
+    animation-duration: 1s;
 }
 
 .card-pet {
-    margin-left: 5.2rem;
-    margin-right: 3.9rem;
+    margin-right: 9rem;
     width: 270px;
+}
+
+.card-pet:last-child {
+    margin-right: 0;
 }
 
 .card-pet:hover {
@@ -332,6 +366,7 @@ h3 {
 
 .button-arrow:hover {
     background-color: #F1CDB3;
+    cursor: grab;
 }
 
 .slider-right {
@@ -487,7 +522,7 @@ h3 {
 
 .footer {
     min-height: 350px;
-    background-image: url("../../assests/images/footer-gradient-background.png");
+    background-image: url("../../assets/images/footer-gradient-background.png");
     background-repeat: no-repeat;
     position: relative;
     overflow: hidden;
@@ -717,7 +752,7 @@ h3 {
 
     /* Третья секция */
 
-    .card-pet_wrapper .card-pet:last-child {
+    .carousel .card-pet:last-child {
         display: none;
     }
 
@@ -1050,7 +1085,7 @@ h3 {
         padding-top: 4.2rem;
     }
 
-    .card-pet_wrapper .card-pet:not(:first-child) {
+    .carousel .card-pet:not(:first-child) {
         display: none;
     }
 
