@@ -38,6 +38,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const petsCardsArray = [
         {
+          id: 0,
           name: "Jennifer",
           img: "../../assets/images/jennifer.png",
           type: "Dog",
@@ -49,6 +50,7 @@ window.addEventListener('DOMContentLoaded', () => {
           parasites: ["none"]
         },
         {
+            id: 1,
           name: "Sophia",
           img: "../../assets/images/sophia.png",
           type: "Dog",
@@ -60,6 +62,7 @@ window.addEventListener('DOMContentLoaded', () => {
           parasites: ["none"]
         },
         {
+            id: 2,
           name: "Woody",
           img: "../../assets/images/woody.png",
           type: "Dog",
@@ -71,6 +74,7 @@ window.addEventListener('DOMContentLoaded', () => {
           parasites: ["none"]
         },
         {
+            id: 3,
           name: "Scarlett",
           img: "../../assets/images/scarlett.png",
           type: "Dog",
@@ -82,6 +86,7 @@ window.addEventListener('DOMContentLoaded', () => {
           parasites: ["none"]
         },
         {
+            id: 4,
           name: "Katrine",
           img: "../../assets/images/katrine.png",
           type: "Cat",
@@ -93,6 +98,7 @@ window.addEventListener('DOMContentLoaded', () => {
           parasites: ["none"]
         },
         {
+            id: 5,
           name: "Timmy",
           img: "../../assets/images/timmy.png",
           type: "Cat",
@@ -104,6 +110,7 @@ window.addEventListener('DOMContentLoaded', () => {
           parasites: ["none"]
         },
         {
+            id: 6,
           name: "Freddie",
           img: "../../assets/images/freddie.png",
           type: "Cat",
@@ -115,6 +122,7 @@ window.addEventListener('DOMContentLoaded', () => {
           parasites: ["none"]
         },
         {
+            id: 7,
           name: "Charly",
           img: "../../assets/images/charly.png",
           type: "Dog",
@@ -130,15 +138,14 @@ window.addEventListener('DOMContentLoaded', () => {
 
       let petsCardsArrayRandom = new Array();
       for (let i = 0; i <= petsCardsArray.length; i++) {
-        petsCardsArrayRandom[i] = petsCardsArray[Math.floor(Math.random() * petsCardsArray.length)];
-/*         petsCardsArrayRandom.push(petsCardsArrayRandom[i]); */
+        petsCardsArrayRandom[i] = petsCardsArray[Math.floor(Math.random() * petsCardsArray.length)].id;
       }
 
-    function createPetsCard (img, name){
+    function createPetsCard (id){
         return `
-            <div class="card-pet">
-            <img src=${img} alt=${name}>
-            <p class="card-name">${name}</p>
+            <div class="card-pet" id=${id}>
+            <img src=${petsCardsArray[id].img} alt=${petsCardsArray[id].name}>
+            <p class="card-name">${petsCardsArray[id].name}</p>
             <button type="button" class="card-button" onclick='location.href="#our-pets"'>Learn more</button>
             </div>`
     }
@@ -148,26 +155,79 @@ window.addEventListener('DOMContentLoaded', () => {
     const cardPetCarouselActive = document.querySelector('.carousel_active-items');
     const cardPetCarouselRight = document.querySelector('.carousel_right-items');
 
-    const petsCardsArrayRandomLeft = petsCardsArrayRandom.slice(0, 3);
-    const petsCardsArrayRandomActive = petsCardsArrayRandom.slice(3, 6);
-    const petsCardsArrayRandomRight = petsCardsArrayRandom.slice(6);
+
+     /* checking dublicates in each group of cards */
+
+    function deleteDuplicates(array) {
+        for (let i = 0; i < array.length; i++) {
+            for (let j = (i+1); j < array.length; j++) {
+                if (array[i] === array[j]) {
+                    let randomId = Math.floor(Math.random() * petsCardsArray.length);
+                    array[j] = petsCardsArray[randomId].id;
+                    i = -1;
+                    break;
+                }
+            }
+        }
+    }
+
+    let petsCardsArrayRandomLeft = petsCardsArrayRandom.slice(0, 3);
+    deleteDuplicates(petsCardsArrayRandomLeft);
+
+    let petsCardsArrayRandomActive = petsCardsArrayRandom.slice(3, 6);
+    deleteDuplicates(petsCardsArrayRandomActive);
+
+    let petsCardsArrayRandomRight = petsCardsArrayRandom.slice(6);
+    deleteDuplicates(petsCardsArrayRandomRight);
+
+    // checking dublicates between the group of cards
+
+    findDublicates(petsCardsArrayRandomLeft, petsCardsArrayRandomActive);
+    findDublicates(petsCardsArrayRandomRight, petsCardsArrayRandomActive);
+
+    function findInArrayByID(array, id) {
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] === id) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    function findDublicates(sideArray, activeArray) {
+        let randomId = 0;
+        for (let i = 0; i < sideArray.length; i++) {
+            if (findInArrayByID(activeArray,sideArray[i]) === true) {
+                randomId = 0;
+                while (true) {
+                    randomId = Math.floor(Math.random() * petsCardsArray.length);
+                    if (findInArrayByID(sideArray,randomId) === false &&
+                        findInArrayByID(activeArray,randomId) === false) {
+                        break;
+                    }
+                }
+                sideArray[i] = petsCardsArray[randomId].id;
+            }
+        }
+
+    }
+
 
     const petCardsLeft = petsCardsArrayRandomLeft.map(card => {
-        return createPetsCard(card.img, card.name);
+        return createPetsCard(card);
     }).join("");
     cardPetCarouselLeft.innerHTML = petCardsLeft;
 
     const petCardsActive = petsCardsArrayRandomActive.map(card => {
-        return createPetsCard(card.img, card.name);
+        return createPetsCard(card);
     }).join("");
     cardPetCarouselActive.innerHTML = petCardsActive;
 
 
     const petCardsRight = petsCardsArrayRandomRight.map(card => {
-        return createPetsCard(card.img, card.name);
+        return createPetsCard(card);
     }).join("");
     cardPetCarouselRight.innerHTML = petCardsRight;
-
 
 
     /* carousel */
@@ -195,17 +255,9 @@ window.addEventListener('DOMContentLoaded', () => {
         if (event.animationName === 'move-left') {
             cardPetCarousel.classList.remove('transition-left');
             cardPetCarouselActive.innerHTML = cardPetCarouselLeft.innerHTML;
-
-            /* let petCardsLeftNewArray = createPetCardsArrayRandomSmall(); */
-
-/*             let petCardsLeftNew = petCardsLeftNewArray.map(card => {
-                return createPetsCard(card.img, card.name);
-            }).join(""); */
-
-            /* cardPetCarouselLeft.innerHTML = '';
-            cardPetCarouselLeft.innerHTML = petCardsLeftNew; */
-
-            let petCardsChanged = createPetCardsArrayRandomSmall();
+            petsCardsArrayRandomActive.length = 0;
+            petsCardsArrayRandomActive.push.apply(petsCardsArrayRandomActive, petsCardsArrayRandomLeft);
+            let petCardsChanged = createPetCardsArrayRandomSmall(petsCardsArrayRandomLeft);
             cardPetCarouselLeft.innerHTML = '';
             cardPetCarouselLeft.innerHTML = petCardsChanged;
 
@@ -214,14 +266,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
             cardPetCarousel.classList.remove('transition-right');
             cardPetCarouselActive.innerHTML = cardPetCarouselRight.innerHTML;
-
-/*             let petCardsRightNewArray = createPetCardsArrayRandomSmall();
-            let petCardsRightNew = petCardsRightNewArray.map(card => {
-                return createPetsCard(card.img, card.name);
-            }).join(""); */
-
-            let petCardsChanged = createPetCardsArrayRandomSmall();
-
+            petsCardsArrayRandomActive.length = 0;
+            petsCardsArrayRandomActive.push.apply(petsCardsArrayRandomActive, petsCardsArrayRandomRight);  
+            let petCardsChanged = createPetCardsArrayRandomSmall(petsCardsArrayRandomRight);
             cardPetCarouselRight.innerHTML = '';
             cardPetCarouselRight.innerHTML = petCardsChanged;
 
@@ -231,23 +278,27 @@ window.addEventListener('DOMContentLoaded', () => {
         leftArrow.addEventListener('click', moveCarouselLeft);
     });
 
-    function createPetCardsArrayRandomSmall() {
+    // creat random array for the left and right sides
+
+    function createPetCardsArrayRandomSmall(sideArray) {
         let petsCardsArrayRandomSmall = new Array();
         for (let i = 0; i < 3; i++) {
-        petsCardsArrayRandomSmall.push(petsCardsArray[Math.floor(Math.random() * petsCardsArray.length)]);
+            petsCardsArrayRandomSmall.push(petsCardsArray[Math.floor(Math.random() * petsCardsArray.length)].id);
         }
-        /* return petsCardsArrayRandomSmall; */
+
+        deleteDuplicates(petsCardsArrayRandomSmall);
+        findDublicates(petsCardsArrayRandomSmall, petsCardsArrayRandomActive);
 
         let petCardsChanged = petsCardsArrayRandomSmall.map(card => {
-            return createPetsCard(card.img, card.name);
+            return createPetsCard(card);
         }).join("");
+
+        sideArray.length = 0;                  // Clear contents
+        sideArray.push.apply(sideArray, petsCardsArrayRandomSmall);  // Append new contents
 
          return petCardsChanged;
 
     }
-
-
-
 
 
 });
