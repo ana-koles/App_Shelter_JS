@@ -1,5 +1,7 @@
 window.addEventListener('DOMContentLoaded', () => {
 
+
+
     /* Burger */
 
     const body = document.body;
@@ -32,7 +34,7 @@ window.addEventListener('DOMContentLoaded', () => {
     navMenuList.addEventListener('click', closeMenu);
 
 
-    /* Creating pets cards */
+    /* Creating pet cards */
 
     const petsCardsArray = [
         {
@@ -125,6 +127,13 @@ window.addEventListener('DOMContentLoaded', () => {
         }
       ];
 
+
+      let petsCardsArrayRandom = new Array();
+      for (let i = 0; i <= petsCardsArray.length; i++) {
+        petsCardsArrayRandom[i] = petsCardsArray[Math.floor(Math.random() * petsCardsArray.length)];
+/*         petsCardsArrayRandom.push(petsCardsArrayRandom[i]); */
+      }
+
     function createPetsCard (img, name){
         return `
             <div class="card-pet">
@@ -134,16 +143,111 @@ window.addEventListener('DOMContentLoaded', () => {
             </div>`
     }
 
-    const petCards = petsCardsArray.map(card => {
+    const cardPetCarousel = document.querySelector('.carousel');
+    const cardPetCarouselLeft = document.querySelector('.carousel_left-items');
+    const cardPetCarouselActive = document.querySelector('.carousel_active-items');
+    const cardPetCarouselRight = document.querySelector('.carousel_right-items');
+
+    const petsCardsArrayRandomLeft = petsCardsArrayRandom.slice(0, 3);
+    const petsCardsArrayRandomActive = petsCardsArrayRandom.slice(3, 6);
+    const petsCardsArrayRandomRight = petsCardsArrayRandom.slice(6);
+
+    const petCardsLeft = petsCardsArrayRandomLeft.map(card => {
         return createPetsCard(card.img, card.name);
     }).join("");
+    cardPetCarouselLeft.innerHTML = petCardsLeft;
 
-    const cardPetCarousel = document.querySelector('.carousel');
-    cardPetCarousel.innerHTML = petCards;
+    const petCardsActive = petsCardsArrayRandomActive.map(card => {
+        return createPetsCard(card.img, card.name);
+    }).join("");
+    cardPetCarouselActive.innerHTML = petCardsActive;
+
+
+    const petCardsRight = petsCardsArrayRandomRight.map(card => {
+        return createPetsCard(card.img, card.name);
+    }).join("");
+    cardPetCarouselRight.innerHTML = petCardsRight;
+
+
 
     /* carousel */
 
     const leftArrow = document.querySelector('.slider-left');
     const rightArrow = document.querySelector('.slider-right');
+
+    leftArrow.addEventListener('click', moveCarouselLeft);
+
+    function moveCarouselLeft(event) {
+        cardPetCarousel.classList.add('transition-left');
+        leftArrow.removeEventListener('click', moveCarouselLeft);
+        rightArrow.removeEventListener('click', moveCarouselRight);
+    };
+
+    rightArrow.addEventListener('click', moveCarouselRight);
+
+    function moveCarouselRight(event) {
+        cardPetCarousel.classList.add('transition-right');
+        rightArrow.removeEventListener('click', moveCarouselRight);
+        leftArrow.removeEventListener('click', moveCarouselLeft);
+    };
+
+    cardPetCarousel.addEventListener("animationend", (event) => {
+        if (event.animationName === 'move-left') {
+            cardPetCarousel.classList.remove('transition-left');
+            cardPetCarouselActive.innerHTML = cardPetCarouselLeft.innerHTML;
+
+            /* let petCardsLeftNewArray = createPetCardsArrayRandomSmall(); */
+
+/*             let petCardsLeftNew = petCardsLeftNewArray.map(card => {
+                return createPetsCard(card.img, card.name);
+            }).join(""); */
+
+            /* cardPetCarouselLeft.innerHTML = '';
+            cardPetCarouselLeft.innerHTML = petCardsLeftNew; */
+
+            let petCardsChanged = createPetCardsArrayRandomSmall();
+            cardPetCarouselLeft.innerHTML = '';
+            cardPetCarouselLeft.innerHTML = petCardsChanged;
+
+
+        } else {
+
+            cardPetCarousel.classList.remove('transition-right');
+            cardPetCarouselActive.innerHTML = cardPetCarouselRight.innerHTML;
+
+/*             let petCardsRightNewArray = createPetCardsArrayRandomSmall();
+            let petCardsRightNew = petCardsRightNewArray.map(card => {
+                return createPetsCard(card.img, card.name);
+            }).join(""); */
+
+            let petCardsChanged = createPetCardsArrayRandomSmall();
+
+            cardPetCarouselRight.innerHTML = '';
+            cardPetCarouselRight.innerHTML = petCardsChanged;
+
+        }
+
+        rightArrow.addEventListener('click', moveCarouselRight);
+        leftArrow.addEventListener('click', moveCarouselLeft);
+    });
+
+    function createPetCardsArrayRandomSmall() {
+        let petsCardsArrayRandomSmall = new Array();
+        for (let i = 0; i < 3; i++) {
+        petsCardsArrayRandomSmall.push(petsCardsArray[Math.floor(Math.random() * petsCardsArray.length)]);
+        }
+        /* return petsCardsArrayRandomSmall; */
+
+        let petCardsChanged = petsCardsArrayRandomSmall.map(card => {
+            return createPetsCard(card.img, card.name);
+        }).join("");
+
+         return petCardsChanged;
+
+    }
+
+
+
+
 
 });

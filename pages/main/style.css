@@ -288,13 +288,18 @@ h3 {
     justify-content: space-between;
     align-items: center;
     position: relative;
-    left: -1080px;
+    left: -990px;
+}
+
+.carousel-items {
+    display: flex;
+
 }
 
 /* animation */
 
 @keyframes move-left {
-    from{left: -1080px;}
+    from{left: -990px;}
     to{left:0px;}
 }
 
@@ -304,8 +309,8 @@ h3 {
 }
 
 @keyframes move-right {
-    from{left: -1080px;}
-    to{left: -2160px}
+    from{left: -990px;}
+    to{left: -1980px}
 }
 
 .transition-right {
