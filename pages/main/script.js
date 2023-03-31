@@ -136,9 +136,9 @@ window.addEventListener('DOMContentLoaded', () => {
       ];
 
 
-      let petsCardsArrayRandom = new Array();
+      let petsCardsRandomArray = new Array();
       for (let i = 0; i <= petsCardsArray.length; i++) {
-        petsCardsArrayRandom[i] = petsCardsArray[Math.floor(Math.random() * petsCardsArray.length)].id;
+        petsCardsRandomArray[i] = petsCardsArray[Math.floor(Math.random() * petsCardsArray.length)].id;
       }
 
     function createPetsCard (id){
@@ -151,9 +151,10 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     const cardPetCarousel = document.querySelector('.carousel');
-    const cardPetCarouselLeft = document.querySelector('.carousel_left-items');
-    const cardPetCarouselActive = document.querySelector('.carousel_active-items');
-    const cardPetCarouselRight = document.querySelector('.carousel_right-items');
+    const leftPetCardsWrapper = document.querySelector('.carousel_left-items');
+    const activePetCardsWrapper = document.querySelector('.carousel_active-items');
+    const rightPetCardsWrapper = document.querySelector('.carousel_right-items');
+
 
 
      /* checking dublicates in each group of cards */
@@ -171,19 +172,19 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    let petsCardsArrayRandomLeft = petsCardsArrayRandom.slice(0, 3);
-    deleteDuplicates(petsCardsArrayRandomLeft);
+    let leftPetsCardsRandomArray = petsCardsRandomArray.slice(0, 3);
+    deleteDuplicates(leftPetsCardsRandomArray);
 
-    let petsCardsArrayRandomActive = petsCardsArrayRandom.slice(3, 6);
-    deleteDuplicates(petsCardsArrayRandomActive);
+    let activePetsCardsRandomArray = petsCardsRandomArray.slice(3, 6);
+    deleteDuplicates(activePetsCardsRandomArray);
 
-    let petsCardsArrayRandomRight = petsCardsArrayRandom.slice(6);
-    deleteDuplicates(petsCardsArrayRandomRight);
+    let rightPetCardsRandomArray = petsCardsRandomArray.slice(6);
+    deleteDuplicates(rightPetCardsRandomArray);
 
     // checking dublicates between the group of cards
 
-    findDublicates(petsCardsArrayRandomLeft, petsCardsArrayRandomActive);
-    findDublicates(petsCardsArrayRandomRight, petsCardsArrayRandomActive);
+    findDublicates(leftPetsCardsRandomArray, activePetsCardsRandomArray);
+    findDublicates(rightPetCardsRandomArray, activePetsCardsRandomArray);
 
     function findInArrayByID(array, id) {
         for (let i = 0; i < array.length; i++) {
@@ -213,21 +214,22 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    const petCardsLeft = petsCardsArrayRandomLeft.map(card => {
+    const petCardsLeft = leftPetsCardsRandomArray.map(card => {
         return createPetsCard(card);
     }).join("");
-    cardPetCarouselLeft.innerHTML = petCardsLeft;
+    leftPetCardsWrapper.innerHTML = petCardsLeft;
 
-    const petCardsActive = petsCardsArrayRandomActive.map(card => {
+    const petCardsActive = activePetsCardsRandomArray.map(card => {
         return createPetsCard(card);
     }).join("");
-    cardPetCarouselActive.innerHTML = petCardsActive;
+    activePetCardsWrapper.innerHTML = petCardsActive;
 
 
-    const petCardsRight = petsCardsArrayRandomRight.map(card => {
+    const petCardsRight = rightPetCardsRandomArray.map(card => {
         return createPetsCard(card);
     }).join("");
-    cardPetCarouselRight.innerHTML = petCardsRight;
+    rightPetCardsWrapper.innerHTML = petCardsRight;
+
 
 
     /* carousel */
@@ -254,23 +256,45 @@ window.addEventListener('DOMContentLoaded', () => {
     cardPetCarousel.addEventListener("animationend", (event) => {
         if (event.animationName === 'move-left') {
             cardPetCarousel.classList.remove('transition-left');
-            cardPetCarouselActive.innerHTML = cardPetCarouselLeft.innerHTML;
-            petsCardsArrayRandomActive.length = 0;
-            petsCardsArrayRandomActive.push.apply(petsCardsArrayRandomActive, petsCardsArrayRandomLeft);
-            let petCardsChanged = createPetCardsArrayRandomSmall(petsCardsArrayRandomLeft);
-            cardPetCarouselLeft.innerHTML = '';
-            cardPetCarouselLeft.innerHTML = petCardsChanged;
+
+            let activePetCardsArray = activePetCardsWrapper.querySelectorAll('.card-pet');
+            activePetCardsArray.forEach(card => {
+                card.removeEventListener('click', openPopup);
+            });
+
+            activePetCardsWrapper.innerHTML = leftPetCardsWrapper.innerHTML;
+            activePetsCardsRandomArray.length = 0;
+            activePetsCardsRandomArray.push.apply(activePetsCardsRandomArray, leftPetsCardsRandomArray);
+            let petCardsChanged = createPetCardsArrayRandomSmall(leftPetsCardsRandomArray);
+            leftPetCardsWrapper.innerHTML = '';
+            leftPetCardsWrapper.innerHTML = petCardsChanged;
+
+            activePetCardsArray = activePetCardsWrapper.querySelectorAll('.card-pet');
+            activePetCardsArray.forEach(card => {
+                card.addEventListener('click', openPopup);
+            });
 
 
         } else {
 
             cardPetCarousel.classList.remove('transition-right');
-            cardPetCarouselActive.innerHTML = cardPetCarouselRight.innerHTML;
-            petsCardsArrayRandomActive.length = 0;
-            petsCardsArrayRandomActive.push.apply(petsCardsArrayRandomActive, petsCardsArrayRandomRight);  
-            let petCardsChanged = createPetCardsArrayRandomSmall(petsCardsArrayRandomRight);
-            cardPetCarouselRight.innerHTML = '';
-            cardPetCarouselRight.innerHTML = petCardsChanged;
+
+            let activePetCardsArray = activePetCardsWrapper.querySelectorAll('.card-pet');
+            activePetCardsArray.forEach(card => {
+                card.removeEventListener('click', openPopup);
+            });
+
+            activePetCardsWrapper.innerHTML = rightPetCardsWrapper.innerHTML;
+            activePetsCardsRandomArray.length = 0;
+            activePetsCardsRandomArray.push.apply(activePetsCardsRandomArray, rightPetCardsRandomArray);
+            let petCardsChanged = createPetCardsArrayRandomSmall(rightPetCardsRandomArray);
+            rightPetCardsWrapper.innerHTML = '';
+            rightPetCardsWrapper.innerHTML = petCardsChanged;
+
+            activePetCardsArray = activePetCardsWrapper.querySelectorAll('.card-pet');
+            activePetCardsArray.forEach(card => {
+                card.addEventListener('click', openPopup);
+            });
 
         }
 
@@ -281,24 +305,100 @@ window.addEventListener('DOMContentLoaded', () => {
     // creat random array for the left and right sides
 
     function createPetCardsArrayRandomSmall(sideArray) {
-        let petsCardsArrayRandomSmall = new Array();
+        let petsCardsRandomSmallArray = new Array();
         for (let i = 0; i < 3; i++) {
-            petsCardsArrayRandomSmall.push(petsCardsArray[Math.floor(Math.random() * petsCardsArray.length)].id);
+            petsCardsRandomSmallArray.push(petsCardsArray[Math.floor(Math.random() * petsCardsArray.length)].id);
         }
 
-        deleteDuplicates(petsCardsArrayRandomSmall);
-        findDublicates(petsCardsArrayRandomSmall, petsCardsArrayRandomActive);
+        deleteDuplicates(petsCardsRandomSmallArray);
+        findDublicates(petsCardsRandomSmallArray, activePetsCardsRandomArray);
 
-        let petCardsChanged = petsCardsArrayRandomSmall.map(card => {
+        let petCardsChanged = petsCardsRandomSmallArray.map(card => {
             return createPetsCard(card);
         }).join("");
 
-        sideArray.length = 0;                  // Clear contents
-        sideArray.push.apply(sideArray, petsCardsArrayRandomSmall);  // Append new contents
-
+        sideArray.length = 0;
+        sideArray.push.apply(sideArray, petsCardsRandomSmallArray);
          return petCardsChanged;
 
     }
+
+    /* Popup */
+
+    const popupHeader = document.querySelector('.popup-header');
+    const popupHeaderText = document.querySelector('.popup-header_text');
+    const popupTextContentOne = document.querySelector('.popup-text_content_one');
+    const popupTextContentTwo = document.querySelector('.popup-text_content_two');
+    const popupTextContentThree = document.querySelector('.popup-text_content_three');
+    const popupTextContentFour = document.querySelector('.popup-text_content_four');
+    const popupTextContentFive = document.querySelector('.popup-text_content_five');
+    const popupContainter = document.querySelector('.popup-content_container');
+    const popupBackground = document.querySelector('.popup_background');
+    const popupImgWrapper = document.querySelector('.popup-img_wrapper');
+    const popupContentWrapper = document.querySelector('.popup-content_wrapper');
+    const closePopupBtn = document.querySelector('.close-popup_btn');
+
+
+    let activePetCardsArray = activePetCardsWrapper.querySelectorAll('.card-pet');
+    activePetCardsArray.forEach(card => {
+        card.addEventListener('click', openPopup);
+    });
+
+
+
+
+    function openPopup(even) {
+        let card = event.target;
+        let cardParent = card.parentElement;
+        let cardParentdId = cardParent.getAttribute('id');
+        let oCard = getCardObject(cardParentdId);
+
+        popupHeader.innerHTML = oCard.name;
+        popupHeaderText.innerHTML = oCard.type + " - " + oCard.breed;
+        popupTextContentOne.innerHTML = oCard.description;
+
+        let AgeTextNode = document.createTextNode(oCard.age);
+        popupTextContentTwo.appendChild(AgeTextNode);
+
+        let InoculationsTextNode = document.createTextNode(oCard.inoculations);
+        popupTextContentThree.appendChild(InoculationsTextNode);
+
+        let diseasesTextNode = document.createTextNode(oCard.diseases);
+        popupTextContentFour.appendChild(diseasesTextNode);
+
+        let parasitesTextNode = document.createTextNode(oCard.parasites);
+        popupTextContentFive.appendChild(parasitesTextNode);
+
+        let popupImg = document.createElement('img');
+        popupImg.src = oCard.img;
+        popupImgWrapper.appendChild(popupImg);
+
+        popupContainter.classList.add('active');
+        popupBackground.classList.add('active');
+        // body.classList.add("body-noscroll");
+
+       /*  const closePopupBtn = document.querySelector('.close-popup_btn'); */
+
+        placeCloseButton(popupContentWrapper, closePopupBtn);
+
+    }
+
+    function getCardObject(cardId) {
+        for (let i = 0; i < petsCardsArray.length; i++) {
+            if (cardId == petsCardsArray[i].id) {
+                return petsCardsArray[i];
+            }
+        }
+    }
+
+    function placeCloseButton(text, button) {
+
+        let textCoords = text.getBoundingClientRect();
+        console.log(textCoords);
+        button.style.left = text.offsetWidth + "px";
+        button.style.top = -button.clientHeight + "px";
+    }
+
 
 
 });

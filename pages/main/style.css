@@ -386,6 +386,167 @@ h3 {
     transform: rotate(-180deg);
 }
 
+/* popup */
+
+.popup_background {
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(41, 41, 41, 0.6);
+    overflow: hidden;
+    z-index: 50;
+    opacity: 0;
+}
+
+.popup_background.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.body-noscroll {
+    overflow: hidden;
+}
+
+.popup-content_container {
+    position: relative;
+    min-width: 900px;
+    min-height: 500px;
+    position: fixed;
+    z-index: 100;
+    background: white;
+    border-radius: 0.9rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+}
+
+.popup-content_container.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.popup-content_wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.close-popup_btn {
+    position:absolute;
+    width: 52px;
+    height: 52px;
+    position: fixed;
+    border: 2px solid #F1CDB3;
+    border-radius: 30px;
+    background: transparent;
+    font-size: 2rem;
+    color: #292929;
+    top:100px;
+    left: 550px;
+}
+
+.close-popup_btn:hover {
+    cursor: pointer;
+}
+
+/* left side of the popup windom */
+.popup-left_wrapper {
+    width: 55%;
+}
+
+.popup-img_wrapper img {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* right  side of the popup windom */
+
+.popup-right_wrapper {
+/*     display: flex;
+    flex-direction: column; */
+    width: 45%;
+    padding: 0.4rem 1.4rem 12.6rem 3.7rem;
+    height: 100%;
+    margin-bottom: 1rem;
+    margin-top: 48px;
+}
+
+.popup-header_wrapper {
+    margin-bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.popup-header {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 400;
+    font-size: 3.5rem;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    margin-bottom: 1.1rem;
+}
+
+.popup-header_text {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2rem;
+    line-height: 2.3rem;
+    letter-spacing: 0.06em;
+}
+
+.popup-text_wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 117px;
+    justify-content: space-between;
+}
+
+.list {
+    margin-bottom: 1rem;
+
+}
+
+.popup-text_content_list {
+    list-style: none;
+    padding-left: 1.4px;
+
+}
+
+
+.list::before {
+    color: #F1CDB3;
+    content: "•";
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+  }
+
+
+.popup-text_content_one{
+    margin-bottom: 4rem;
+}
+
+.popup-text_content_one, .list {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.5rem;
+    line-height: 1.7rem;
+    letter-spacing: 0.06em;
+}
+
+
+.list > span {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.7rem;
+    letter-spacing: 0.06em;
+}
+
+
+
 /* Четвертая секция */
 
 .fourth-section {
