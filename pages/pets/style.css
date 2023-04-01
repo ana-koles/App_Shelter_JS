@@ -248,6 +248,168 @@ nav {
     font-size: 2em;
 }
 
+/* popup */
+
+.popup_background {
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(41, 41, 41, 0.6);
+    overflow: hidden;
+    z-index: 50;
+    opacity: 0;
+}
+
+.popup_background.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.body-noscroll {
+    overflow: hidden;
+}
+
+.popup-content_container {
+    position: relative;
+    width: 900px;
+    height: 500px;
+    position: fixed;
+    z-index: 100;
+    background: white;
+    border-radius: 0.9rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+}
+
+.popup-content_container.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.popup-content_wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.close-popup_btn {
+    position:absolute;
+    width: 52px;
+    height: 52px;
+    position: fixed;
+    border: 2px solid #F1CDB3;
+    border-radius: 30px;
+    background: transparent;
+    font-size: 3rem;
+    color: #292929;
+    top:100px;
+    left: 550px;
+}
+
+.close-popup_btn:hover {
+    cursor: pointer;
+    background: #F1CDB3;
+}
+
+/* left side of the popup windom */
+.popup-left_wrapper {
+    width: 56.5%;
+    height: 100%;
+}
+
+.popup-img_wrapper img {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 9px 0px 0px 9px;
+    margin-top: 0.3rem;
+    margin:0;
+}
+
+/* right  side of the popup windom */
+
+.popup-right_wrapper {
+    width: 45%;
+    padding: 0.4rem 1.4rem 12.6rem 3.7rem;
+    height: 100%;
+    margin-bottom: 1rem;
+    margin-top: 48px;
+}
+
+.popup-header_wrapper {
+    margin-bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.popup-header {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 400;
+    font-size: 3.5rem;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    margin-bottom: 1.1rem;
+}
+
+.popup-header_text {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2rem;
+    line-height: 2.3rem;
+    letter-spacing: 0.06em;
+}
+
+.popup-text_wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 117px;
+    justify-content: space-between;
+}
+
+.list {
+    margin-bottom: 1rem;
+
+}
+
+.popup-text_content_list {
+    list-style: none;
+    padding-left: 1.4rem;
+
+}
+
+.list::before {
+    color: #F1CDB3;
+    content: "•";
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+  }
+
+.popup-text_content_one{
+    margin-bottom: 4rem;
+}
+
+.list_name {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.7rem;
+    letter-spacing: 0.06em;
+}
+
+
+.popup-text_content_one, .list_text {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.5rem;
+    line-height: 1.7rem;
+    letter-spacing: 0.06em;
+}
+
+/* Footer */
+
 .footer {
     height: 350px;
     background-image: url("../../assets/images/footer-gradient-background.png");
@@ -415,7 +577,6 @@ nav {
     .header-container {
         padding-top: 3rem;
         padding-left: 0.5rem;
-
     }
 
     nav {
@@ -456,6 +617,70 @@ nav {
         margin-bottom: 1.3rem;
     }
 
+ /* popup */
+
+ .popup-content_container {
+    width: 630px;
+    height: 350px;
+    border-radius: 0.9rem;
+}
+
+.close-popup_btn {
+    position:absolute;
+    width: 52px;
+    height: 52px;
+    position: fixed;
+    border: 2px solid #F1CDB3;
+    border-radius: 30px;
+    background: transparent;
+    font-size: 3rem;
+    color: #292929;
+    top:100px;
+    left: 550px;
+}
+
+.close-popup_btn:hover {
+    cursor: pointer;
+    background: #F1CDB3;
+}
+
+
+/* right  side of the popup windom */
+
+.popup-right_wrapper {
+    padding: 0rem 0.4rem 12rem 1.5rem;
+    margin-top: 0.9rem;
+}
+
+.popup-header_wrapper {
+    margin-bottom: 2rem;
+}
+
+.popup-header {
+    margin-bottom: 1.1rem;
+}
+
+.popup-text_wrapper {
+    max-height: 117px;
+}
+
+.list {
+    margin-bottom: 0.56rem;
+}
+
+.popup-text_content_list {
+    padding-left: 1.4rem;
+
+}
+
+.popup-text_content_one{
+    margin-bottom: 2rem;
+    font-size: 1.3rem;
+    line-height: 1.4rem;
+}
+
+
+
     /* footer */
 
     .footer {
@@ -463,7 +688,6 @@ nav {
         position: relative;
         bottom: 0;
     }
-
 
     .footer-content {
         flex-direction: column;
@@ -626,11 +850,6 @@ nav {
         margin-bottom: 30px;
     }
 
-/*     .nav-menu_list li:nth-child(2) {
-        border-bottom: 0.1em solid #F1CDB3;
-        color: #FAFAFA;
-    } */
-
     .menu-link_main {
         color: #FAFAFA;
         font-size: 2rem;
@@ -640,11 +859,6 @@ nav {
         right: 0;
         pointer-events: all;
     }
-
-
-
-
-
 
     .logo-link {
         padding-left: 1rem;
@@ -656,12 +870,6 @@ nav {
         color: #CDCDCD;
     }
 
-
-
-    /* .logo {
-        top: 30px;
-        left: 10px;
-    } */
 
     .main-section_content h2 {
         font-size: 2.5rem;
@@ -689,6 +897,78 @@ nav {
         margin-bottom: 1.6rem;
     }
 
+
+    /* popup */
+
+    .popup-content_container {
+        width: 240px;
+        height: 341px;
+        border-radius: 0.9rem;
+    }
+
+
+    .close-popup_btn:hover {
+        cursor: pointer;
+        background: #F1CDB3;
+    }
+
+
+    .popup-content_wrapper {
+        overflow: hidden;
+        height: 100%;
+    }
+
+    /* left  side of the popup windom */
+    .hide {
+        display: none;
+    }
+
+    /* right  side of the popup windom */
+
+    .popup-content_wrapper {
+        overflow: hidden;
+    }
+
+    .popup-right_wrapper {
+        padding: 0.2rem 1rem 12rem 1rem;
+        margin-top: 0.9rem;
+        width: 100%;
+    }
+
+    .popup-header_wrapper {
+        margin-bottom: 2rem;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .popup-header {
+        margin-bottom: 1.1rem;
+    }
+
+    .popup-text_wrapper {
+        max-height: 117px;
+    }
+
+    .list {
+        margin-bottom: 0.56rem;
+    }
+
+    .popup-text_content_list {
+        padding-left: 1.4rem;
+
+    }
+
+    .popup-text_content_one{
+        margin-bottom: 2.5rem;
+        font-size: 1.3rem;
+        line-height: 1.4rem;
+        text-align: justify;
+    }
+
+
+    .popup-header_text {
+        text-align: center;
+    }
 
     /* Footer */
 

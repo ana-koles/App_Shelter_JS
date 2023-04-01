@@ -170,7 +170,8 @@ window.addEventListener('DOMContentLoaded', () => {
             <img src=${petsCardsArray[id].img} alt=${petsCardsArray[id].name}>
             <p class="card-name">${petsCardsArray[id].name}</p>
             <button type="button" class="card-button" onclick='location.href="#our-pets"'>Learn more</button>
-            </div>`
+            </div>
+            `;
     }
 
 
@@ -203,7 +204,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 
-       if (viewForm() === "desktop") {
+    if (viewForm() === "desktop") {
         leftPetsCardsRandomArray = petsCardsRandomArray.slice(0, 3);
         deleteDuplicates(leftPetsCardsRandomArray);
 

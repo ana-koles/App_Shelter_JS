@@ -445,14 +445,15 @@ h3 {
     position:absolute;
     width: 52px;
     height: 52px;
-    position: fixed;
+    /* position: fixed; */
     border: 2px solid #F1CDB3;
     border-radius: 30px;
     background: transparent;
     font-size: 3rem;
     color: #292929;
-    top:100px;
-    left: 550px;
+/*     top:100px;
+    left: 550px; */
+    z-index: 100;
 }
 
 .close-popup_btn:hover {
@@ -462,12 +463,17 @@ h3 {
 
 /* left side of the popup windom */
 .popup-left_wrapper {
-    width: 55%;
+    width: 56.5%;
+    height: 100%;
+
 }
 
 .popup-img_wrapper img {
     width: 100%;
     overflow: hidden;
+    border-radius: 9px 0px 0px 9px;
+    margin-top: 0.3rem;
+    margin: 0;
 }
 
 /* right  side of the popup windom */
@@ -890,7 +896,7 @@ h3 {
         width: 569px;
     }
 
-    /* Вторая секция */
+    /* Second section */
 
     .second-section {
         height: 981px;
@@ -918,7 +924,7 @@ h3 {
         left: 208px;
     }
 
-    /* Третья секция */
+    /* Third section */
 
     .card-pet {
         margin-right: 4rem;
@@ -965,14 +971,11 @@ h3 {
         position:absolute;
         width: 52px;
         height: 52px;
-        position: fixed;
         border: 2px solid #F1CDB3;
         border-radius: 30px;
         background: transparent;
         font-size: 3rem;
         color: #292929;
-        top:100px;
-        left: 550px;
     }
 
     .close-popup_btn:hover {
@@ -1016,7 +1019,7 @@ h3 {
     }
 
 
-    /* Четвертая секция */
+    /* Fourth section */
 
     .fourth-section {
         height: 779px;
@@ -1104,6 +1107,7 @@ h3 {
         right: auto;
         top: 0px;
         overflow: hidden;
+
     }
 }
 
@@ -1227,7 +1231,7 @@ h3 {
     }
 
 
-    
+
     .logo-link {
         padding-left: 1rem;
         z-index: 15;
@@ -1401,11 +1405,6 @@ h3 {
         background: #F1CDB3;
     }
 
-
-    .popup-content_container {
-        overflow: hidden;
-    }
-
     /* left  side of the popup windom */
     .hide {
         display: none;
@@ -1415,6 +1414,7 @@ h3 {
 
     .popup-content_wrapper {
         overflow: hidden;
+        height: 100%;
     }
 
     .popup-right_wrapper {
