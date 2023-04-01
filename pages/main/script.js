@@ -1,7 +1,5 @@
 window.addEventListener('DOMContentLoaded', () => {
 
-
-
     /* Burger */
 
     const body = document.body;
@@ -412,7 +410,6 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 
 
-
     function openPopup(even) {
         let card = event.target;
         let cardParent = card.parentElement;
@@ -435,9 +432,15 @@ window.addEventListener('DOMContentLoaded', () => {
         let parasitesTextNode = document.createTextNode(oCard.parasites);
         popupTextContentFive.appendChild(parasitesTextNode);
 
-        let popupImg = document.createElement('img');
-        popupImg.src = oCard.img;
-        popupImgWrapper.appendChild(popupImg);
+
+        if (viewForm() === "desktop" || viewForm() === "netbook") {
+            document.querySelector(".popup-left_wrapper").classList.remove('hide');
+            let popupImg = document.createElement('img');
+            popupImg.src = oCard.img;
+            popupImgWrapper.appendChild(popupImg);
+        }  else if(viewForm() === "phone"){
+            document.querySelector(".popup-left_wrapper").classList.add('hide');
+        }
 
         popupContainter.classList.add('active');
         popupBackground.classList.add('active');
@@ -456,9 +459,19 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     function placeCloseButton(text, button) {
+
+        if (viewForm() === "phone"){
+            let textCoords = text.getBoundingClientRect();
+            button.style.left = text.offsetWidth - 20 + "px";
+            button.style.top = -button.clientHeight -  2 + "px";
+        } else {
+
         let textCoords = text.getBoundingClientRect();
         button.style.left = text.offsetWidth + "px";
         button.style.top = -button.clientHeight + "px";
+        }
+
+
     }
 
     /* close popup */

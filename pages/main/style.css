@@ -980,7 +980,6 @@ h3 {
         background: #F1CDB3;
     }
 
-    /* left side of the popup windom */
 
     /* right  side of the popup windom */
 
@@ -1003,7 +1002,6 @@ h3 {
 
     .list {
         margin-bottom: 0.56rem;
-
     }
 
     .popup-text_content_list {
@@ -1015,13 +1013,6 @@ h3 {
         margin-bottom: 2rem;
         font-size: 1.3rem;
         line-height: 1.4rem;
-    }
-
-    .list_name {
-    }
-
-
-    .popup-text_content_one, .list_text {
     }
 
 
@@ -1167,7 +1158,6 @@ h3 {
     .burger_active span:nth-child(2) {
         transform: translateX(-1px) rotate(-90deg);
         margin-left: 1px;
-
     }
 
     .burger_active span:nth-child(3) {
@@ -1236,6 +1226,8 @@ h3 {
         pointer-events: all;
     }
 
+
+    
     .logo-link {
         padding-left: 1rem;
         z-index: 15;
@@ -1283,7 +1275,7 @@ h3 {
         margin-bottom: 30px;
     }
 
-    /* Вторая часть */
+    /* Second section */
 
     .second-section {
         height: 950px;
@@ -1329,7 +1321,7 @@ h3 {
         max-width: 260px;
     }
 
-    /* Третья секция */
+    /* Third section */
 
     .third-section {
         height: 791px;
@@ -1375,9 +1367,6 @@ h3 {
     }
 
 
-
-
-
 /*     animation */
 
     .card-pet_wrapper {
@@ -1398,8 +1387,78 @@ h3 {
             to{left: -540px}
     }
 
+       /* popup */
 
-   /*  Четвертая секция */
+       .popup-content_container {
+        width: 240px;
+        height: 341px;
+        border-radius: 0.9rem;
+    }
+
+
+    .close-popup_btn:hover {
+        cursor: pointer;
+        background: #F1CDB3;
+    }
+
+
+    .popup-content_container {
+        overflow: hidden;
+    }
+
+    /* left  side of the popup windom */
+    .hide {
+        display: none;
+    }
+
+    /* right  side of the popup windom */
+
+    .popup-content_wrapper {
+        overflow: hidden;
+    }
+
+    .popup-right_wrapper {
+        padding: 0.2rem 1rem 12rem 1rem;
+        margin-top: 0.9rem;
+        width: 100%;
+    }
+
+    .popup-header_wrapper {
+        margin-bottom: 2rem;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .popup-header {
+        margin-bottom: 1.1rem;
+    }
+
+    .popup-text_wrapper {
+        max-height: 117px;
+    }
+
+    .list {
+        margin-bottom: 0.56rem;
+    }
+
+    .popup-text_content_list {
+        padding-left: 1.4rem;
+
+    }
+
+    .popup-text_content_one{
+        margin-bottom: 2.5rem;
+        font-size: 1.3rem;
+        line-height: 1.4rem;
+        text-align: justify;
+    }
+
+
+    .popup-header_text {
+        text-align: center;
+    }
+
+   /*  Fourth section */
    .fourth-section {
         height: 745px;
     }
@@ -1440,7 +1499,7 @@ h3 {
         margin-bottom: 1.8em;
     }
 
-    /* Пятая секция */
+    /* Fifth section */
 
     .fifth-section {
         height: 542px;
