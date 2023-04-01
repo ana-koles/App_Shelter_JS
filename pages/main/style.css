@@ -171,7 +171,7 @@ h1 {
     max-width: 100%;
 }
 
-/* Вторая секция */
+/* Second section */
 
 .second-section {
     height: 507px;
@@ -246,7 +246,7 @@ h3 {
 
 }
 
-/* Третья секция */
+/* Тhird section */
 
 .third-section {
     height: 877px;
@@ -258,7 +258,6 @@ h3 {
     margin: 0 auto;
     margin-bottom: 14.4rem;
 }
-
 
 .third-section_title h3{
     position: relative;
@@ -420,8 +419,8 @@ h3 {
 
 .popup-content_container {
     position: relative;
-    min-width: 900px;
-    min-height: 500px;
+    width: 900px;
+    height: 500px;
     position: fixed;
     z-index: 100;
     background: white;
@@ -450,7 +449,7 @@ h3 {
     border: 2px solid #F1CDB3;
     border-radius: 30px;
     background: transparent;
-    font-size: 2rem;
+    font-size: 3rem;
     color: #292929;
     top:100px;
     left: 550px;
@@ -458,6 +457,7 @@ h3 {
 
 .close-popup_btn:hover {
     cursor: pointer;
+    background: #F1CDB3;
 }
 
 /* left side of the popup windom */
@@ -473,8 +473,6 @@ h3 {
 /* right  side of the popup windom */
 
 .popup-right_wrapper {
-/*     display: flex;
-    flex-direction: column; */
     width: 45%;
     padding: 0.4rem 1.4rem 12.6rem 3.7rem;
     height: 100%;
@@ -518,10 +516,9 @@ h3 {
 
 .popup-text_content_list {
     list-style: none;
-    padding-left: 1.4px;
+    padding-left: 1.4rem;
 
 }
-
 
 .list::before {
     color: #F1CDB3;
@@ -531,7 +528,6 @@ h3 {
     width: 1em;
     margin-left: -1em;
   }
-
 
 .popup-text_content_one{
     margin-bottom: 4rem;
@@ -925,7 +921,7 @@ h3 {
     /* Третья секция */
 
     .card-pet {
-        margin-right: 4.41rem;
+        margin-right: 4rem;
         width: 270px;
     }
 
@@ -956,6 +952,77 @@ h3 {
         to{left: -1160px}
     }
 
+
+    /* popup */
+
+    .popup-content_container {
+        width: 630px;
+        height: 350px;
+        border-radius: 0.9rem;
+    }
+
+    .close-popup_btn {
+        position:absolute;
+        width: 52px;
+        height: 52px;
+        position: fixed;
+        border: 2px solid #F1CDB3;
+        border-radius: 30px;
+        background: transparent;
+        font-size: 3rem;
+        color: #292929;
+        top:100px;
+        left: 550px;
+    }
+
+    .close-popup_btn:hover {
+        cursor: pointer;
+        background: #F1CDB3;
+    }
+
+    /* left side of the popup windom */
+
+    /* right  side of the popup windom */
+
+    .popup-right_wrapper {
+        padding: 0rem 0.4rem 12rem 1.5rem;
+        margin-top: 0.9rem;
+    }
+
+    .popup-header_wrapper {
+        margin-bottom: 2rem;
+    }
+
+    .popup-header {
+        margin-bottom: 1.1rem;
+    }
+
+    .popup-text_wrapper {
+        max-height: 117px;
+    }
+
+    .list {
+        margin-bottom: 0.56rem;
+
+    }
+
+    .popup-text_content_list {
+        padding-left: 1.4rem;
+
+    }
+
+    .popup-text_content_one{
+        margin-bottom: 2rem;
+        font-size: 1.3rem;
+        line-height: 1.4rem;
+    }
+
+    .list_name {
+    }
+
+
+    .popup-text_content_one, .list_text {
+    }
 
 
     /* Четвертая секция */

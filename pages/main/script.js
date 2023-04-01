@@ -140,23 +140,14 @@ window.addEventListener('DOMContentLoaded', () => {
     function viewForm(){
         if (window.innerWidth > 1279) {
           return "desktop";
-        } else if (window.innerWidth > 768 )  {
+        } else if (window.innerWidth >= 768 )  {
           return "netbook";
-        } else if (window.innerWidth <= 768) {
+        } else if (window.innerWidth < 768) {
             return "phone";
         }
       };
 
-      //window.addEventListener('resize', viewForm);
-
-
-
-/*       let petsCardsRandomArray = new Array();
-      for (let i = 0; i <= petsCardsArray.length; i++) {
-        petsCardsRandomArray[i] = petsCardsArray[Math.floor(Math.random() * petsCardsArray.length)].id;
-      } */
-
-    console.log(viewForm());
+      console.log(viewForm())
 
     let petsCardsRandomArray = new Array();
 
@@ -213,8 +204,6 @@ window.addEventListener('DOMContentLoaded', () => {
     let rightPetCardsRandomArray;
 
 
-    viewForm();
-    window.addEventListener('resize', viewForm);
 
        if (viewForm() === "desktop") {
         leftPetsCardsRandomArray = petsCardsRandomArray.slice(0, 3);
@@ -245,8 +234,6 @@ window.addEventListener('DOMContentLoaded', () => {
         rightPetCardsRandomArray = petsCardsRandomArray.slice(2, 3);
         deleteDuplicates(rightPetCardsRandomArray);
     }
-
-
 
 
     // checking dublicates between the group of cards
@@ -402,28 +389,6 @@ window.addEventListener('DOMContentLoaded', () => {
 }
 
 
-
- /*        let petsCardsRandomSmallArray = new Array();
-
-
-        for (let i = 0; i < 3; i++) {
-            petsCardsRandomSmallArray.push(petsCardsArray[Math.floor(Math.random() * petsCardsArray.length)].id);
-        }
-
-        deleteDuplicates(petsCardsRandomSmallArray);
-        findDublicates(petsCardsRandomSmallArray, activePetsCardsRandomArray);
-
-        let petCardsChanged = petsCardsRandomSmallArray.map(card => {
-            return createPetsCard(card);
-        }).join("");
-
-        sideArray.length = 0;
-        sideArray.push.apply(sideArray, petsCardsRandomSmallArray);
-         return petCardsChanged;
-         }*/
-
-
-
     /* Popup */
 
     const popupHeader = document.querySelector('.popup-header');
@@ -445,7 +410,6 @@ window.addEventListener('DOMContentLoaded', () => {
     activePetCardsArray.forEach(card => {
         card.addEventListener('click', openPopup);
     });
-
 
 
 
