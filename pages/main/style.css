@@ -374,6 +374,13 @@ h3 {
     cursor: grab;
 }
 
+.slider-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
 .slider-right {
     margin-right: 1px;
     display: flex;
@@ -381,6 +388,7 @@ h3 {
     justify-content: center;
     align-items: flex-end;
 }
+
 
 .arrow-right {
     transform: rotate(-180deg);
@@ -529,15 +537,7 @@ h3 {
     margin-bottom: 4rem;
 }
 
-.popup-text_content_one, .list {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 1.5rem;
-    line-height: 1.7rem;
-    letter-spacing: 0.06em;
-}
-
-
-.list > span {
+.list_name {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 1.5rem;
     font-weight: 700;
@@ -546,6 +546,12 @@ h3 {
 }
 
 
+.popup-text_content_one, .list_text {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.5rem;
+    line-height: 1.7rem;
+    letter-spacing: 0.06em;
+}
 
 /* Четвертая секция */
 
@@ -844,7 +850,7 @@ h3 {
 
 @media (max-width: 1279px) {
     .container {
-        width: 720px;
+        max-width: 720px;
     }
 
     .first-section {
@@ -918,14 +924,39 @@ h3 {
 
     /* Третья секция */
 
-    .carousel .card-pet:last-child {
-        display: none;
+    .card-pet {
+        margin-right: 4.41rem;
+        width: 270px;
     }
 
-    .card-pet {
-        margin-left: 1.6rem;
-        margin-right: 1.6rem;
+    .card-pet:last-child {
+        margin-right: 0;
     }
+
+
+/*     animation */
+
+    .card-pet_wrapper {
+        width: 580px;
+    }
+
+    .carousel {
+        left: -580px;
+    }
+
+
+    @keyframes move-left {
+        from{left: -580px;}
+        to{left:0px;}
+    }
+
+
+    @keyframes move-right {
+        from{left: -580px;}
+        to{left: -1160px}
+    }
+
+
 
     /* Четвертая секция */
 
@@ -1020,7 +1051,7 @@ h3 {
 
 @media (max-width:767px) {
     .container {
-        width: 320px;
+        max-width: 320px;
     }
 
     /* Первая секция */
@@ -1275,6 +1306,31 @@ h3 {
     .second-section_button-container {
         margin-top: 14.3rem;
     }
+
+
+
+
+
+/*     animation */
+
+    .card-pet_wrapper {
+        width: 270px;
+    }
+
+    .carousel {
+        left: -270px;
+    }
+
+    @keyframes move-left {
+        from{left: -270px;}
+        to{left:0px;}
+    }
+
+    @keyframes move-right {
+            from{left: -270px;}
+            to{left: -540px}
+    }
+
 
    /*  Четвертая секция */
    .fourth-section {

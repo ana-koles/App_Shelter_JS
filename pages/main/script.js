@@ -135,11 +135,45 @@ window.addEventListener('DOMContentLoaded', () => {
         }
       ];
 
+          /* Checking window size */
 
-      let petsCardsRandomArray = new Array();
+    function viewForm(){
+        if (window.innerWidth > 1279) {
+          return "desktop";
+        } else if (window.innerWidth > 768 )  {
+          return "netbook";
+        } else if (window.innerWidth <= 768) {
+            return "phone";
+        }
+      };
+
+      //window.addEventListener('resize', viewForm);
+
+
+
+/*       let petsCardsRandomArray = new Array();
       for (let i = 0; i <= petsCardsArray.length; i++) {
         petsCardsRandomArray[i] = petsCardsArray[Math.floor(Math.random() * petsCardsArray.length)].id;
+      } */
+
+    console.log(viewForm());
+
+    let petsCardsRandomArray = new Array();
+
+        if (viewForm() === "desktop") {
+            for (let i = 0; i <= petsCardsArray.length; i++) {
+            petsCardsRandomArray[i] = petsCardsArray[Math.floor(Math.random() * petsCardsArray.length)].id;
+            }
+      } else if(viewForm() === "netbook"){
+            for (let i = 0; i < 6; i++) {
+          petsCardsRandomArray[i] = petsCardsArray[Math.floor(Math.random() * petsCardsArray.length)].id;
+        }
+      } else if (viewForm() === "phone") {
+            for (let i = 0; i < 3; i++) {
+                petsCardsRandomArray[i] = petsCardsArray[Math.floor(Math.random() * petsCardsArray.length)].id;
+                }
       }
+
 
     function createPetsCard (id){
         return `
@@ -149,6 +183,7 @@ window.addEventListener('DOMContentLoaded', () => {
             <button type="button" class="card-button" onclick='location.href="#our-pets"'>Learn more</button>
             </div>`
     }
+
 
     const cardPetCarousel = document.querySelector('.carousel');
     const leftPetCardsWrapper = document.querySelector('.carousel_left-items');
@@ -172,14 +207,47 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    let leftPetsCardsRandomArray = petsCardsRandomArray.slice(0, 3);
-    deleteDuplicates(leftPetsCardsRandomArray);
 
-    let activePetsCardsRandomArray = petsCardsRandomArray.slice(3, 6);
-    deleteDuplicates(activePetsCardsRandomArray);
+    let leftPetsCardsRandomArray;
+    let activePetsCardsRandomArray;
+    let rightPetCardsRandomArray;
 
-    let rightPetCardsRandomArray = petsCardsRandomArray.slice(6);
-    deleteDuplicates(rightPetCardsRandomArray);
+
+    viewForm();
+    window.addEventListener('resize', viewForm);
+
+       if (viewForm() === "desktop") {
+        leftPetsCardsRandomArray = petsCardsRandomArray.slice(0, 3);
+        deleteDuplicates(leftPetsCardsRandomArray);
+
+        activePetsCardsRandomArray = petsCardsRandomArray.slice(3, 6);
+        deleteDuplicates(activePetsCardsRandomArray);
+
+        rightPetCardsRandomArray = petsCardsRandomArray.slice(6);
+        deleteDuplicates(rightPetCardsRandomArray);
+
+    } else if(viewForm() === "netbook"){
+        leftPetsCardsRandomArray = petsCardsRandomArray.slice(0, 2);
+        deleteDuplicates(leftPetsCardsRandomArray);
+
+        activePetsCardsRandomArray = petsCardsRandomArray.slice(2, 4);
+        deleteDuplicates(activePetsCardsRandomArray);
+
+        rightPetCardsRandomArray = petsCardsRandomArray.slice(4);
+        deleteDuplicates(rightPetCardsRandomArray);
+    } else if (viewForm() === "phone") {
+        leftPetsCardsRandomArray = petsCardsRandomArray.slice(0, 1);
+        deleteDuplicates(leftPetsCardsRandomArray);
+
+        activePetsCardsRandomArray = petsCardsRandomArray.slice(1, 2);
+        deleteDuplicates(activePetsCardsRandomArray);
+
+        rightPetCardsRandomArray = petsCardsRandomArray.slice(2, 3);
+        deleteDuplicates(rightPetCardsRandomArray);
+    }
+
+
+
 
     // checking dublicates between the group of cards
 
@@ -306,6 +374,38 @@ window.addEventListener('DOMContentLoaded', () => {
 
     function createPetCardsArrayRandomSmall(sideArray) {
         let petsCardsRandomSmallArray = new Array();
+        if (viewForm() === "desktop") {
+            for (let i = 0; i < 3; i++) {
+                petsCardsRandomSmallArray.push(petsCardsArray[Math.floor(Math.random() * petsCardsArray.length)].id);
+            }
+        } else if(viewForm() === "netbook"){
+            for (let i = 0; i < 2; i++) {
+                petsCardsRandomSmallArray.push(petsCardsArray[Math.floor(Math.random() * petsCardsArray.length)].id);
+            }
+        } else if(viewForm() === "phone"){
+            for (let i = 0; i < 1; i++) {
+                petsCardsRandomSmallArray.push(petsCardsArray[Math.floor(Math.random() * petsCardsArray.length)].id);
+            }
+        }
+
+        deleteDuplicates(petsCardsRandomSmallArray);
+        findDublicates(petsCardsRandomSmallArray, activePetsCardsRandomArray);
+
+        let petCardsChanged = petsCardsRandomSmallArray.map(card => {
+            return createPetsCard(card);
+        }).join("");
+
+        sideArray.length = 0;
+        sideArray.push.apply(sideArray, petsCardsRandomSmallArray);
+         return petCardsChanged;
+
+}
+
+
+
+ /*        let petsCardsRandomSmallArray = new Array();
+
+
         for (let i = 0; i < 3; i++) {
             petsCardsRandomSmallArray.push(petsCardsArray[Math.floor(Math.random() * petsCardsArray.length)].id);
         }
@@ -320,23 +420,25 @@ window.addEventListener('DOMContentLoaded', () => {
         sideArray.length = 0;
         sideArray.push.apply(sideArray, petsCardsRandomSmallArray);
          return petCardsChanged;
+         }*/
 
-    }
+
 
     /* Popup */
 
     const popupHeader = document.querySelector('.popup-header');
     const popupHeaderText = document.querySelector('.popup-header_text');
     const popupTextContentOne = document.querySelector('.popup-text_content_one');
-    const popupTextContentTwo = document.querySelector('.popup-text_content_two');
-    const popupTextContentThree = document.querySelector('.popup-text_content_three');
-    const popupTextContentFour = document.querySelector('.popup-text_content_four');
-    const popupTextContentFive = document.querySelector('.popup-text_content_five');
+    const popupTextContentTwo = document.querySelector('.list_age');
+    const popupTextContentThree = document.querySelector('.list_incoulations');
+    const popupTextContentFour = document.querySelector('.list_deseases');
+    const popupTextContentFive = document.querySelector('.list_parasite');
     const popupContainter = document.querySelector('.popup-content_container');
     const popupBackground = document.querySelector('.popup_background');
     const popupImgWrapper = document.querySelector('.popup-img_wrapper');
     const popupContentWrapper = document.querySelector('.popup-content_wrapper');
     const closePopupBtn = document.querySelector('.close-popup_btn');
+    const popupContentTextList = document.querySelector('.popup-text_content_list');
 
 
     let activePetCardsArray = activePetCardsWrapper.querySelectorAll('.card-pet');
@@ -375,9 +477,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
         popupContainter.classList.add('active');
         popupBackground.classList.add('active');
-        // body.classList.add("body-noscroll");
-
-       /*  const closePopupBtn = document.querySelector('.close-popup_btn'); */
+        body.classList.add("body-noscroll");
 
         placeCloseButton(popupContentWrapper, closePopupBtn);
 
@@ -392,13 +492,29 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     function placeCloseButton(text, button) {
-
         let textCoords = text.getBoundingClientRect();
-        console.log(textCoords);
         button.style.left = text.offsetWidth + "px";
         button.style.top = -button.clientHeight + "px";
     }
 
+    /* close popup */
 
+    closePopupBtn.addEventListener('click', closePopup);
+    popupBackground.addEventListener('click', closePopup);
+
+
+    function closePopup() {
+        popupContainter.classList.remove('active');
+        popupBackground.classList.remove('active');
+        popupImgWrapper.innerHTML = '';
+
+        const textList = document.querySelectorAll('.list_text');
+        textList.forEach(list => {
+            list.innerHTML = '';
+        });
+
+
+        body.classList.remove("body-noscroll");
+    }
 
 });
