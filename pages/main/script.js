@@ -202,8 +202,6 @@ window.addEventListener('DOMContentLoaded', () => {
     let activePetsCardsRandomArray;
     let rightPetCardsRandomArray;
 
-
-
     if (viewForm() === "desktop") {
         leftPetsCardsRandomArray = petsCardsRandomArray.slice(0, 3);
         deleteDuplicates(leftPetsCardsRandomArray);
@@ -384,7 +382,6 @@ window.addEventListener('DOMContentLoaded', () => {
         sideArray.length = 0;
         sideArray.push.apply(sideArray, petsCardsRandomSmallArray);
          return petCardsChanged;
-
 }
 
 
@@ -421,11 +418,11 @@ window.addEventListener('DOMContentLoaded', () => {
         popupHeaderText.innerHTML = oCard.type + " - " + oCard.breed;
         popupTextContentOne.innerHTML = oCard.description;
 
-        let AgeTextNode = document.createTextNode(oCard.age);
-        popupTextContentTwo.appendChild(AgeTextNode);
+        let ageTextNode = document.createTextNode(oCard.age);
+        popupTextContentTwo.appendChild(ageTextNode);
 
-        let InoculationsTextNode = document.createTextNode(oCard.inoculations);
-        popupTextContentThree.appendChild(InoculationsTextNode);
+        let inoculationsTextNode = document.createTextNode(oCard.inoculations);
+        popupTextContentThree.appendChild(inoculationsTextNode);
 
         let diseasesTextNode = document.createTextNode(oCard.diseases);
         popupTextContentFour.appendChild(diseasesTextNode);

@@ -100,6 +100,7 @@ nav {
 .main-section {
     height: 1342px;
     background-color: #F6F6F6;
+    overflow: hidden;
 
 }
 
@@ -114,13 +115,32 @@ nav {
     margin-bottom: 5.9rem;
 }
 
+.card-pet_wrapper {
+    width: 1200px;
+    display: flex;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
 .main-section_cards {
     display: flex;
-    flex-wrap: wrap;
-    align-content: space-between;
-    justify-content: center;
-    margin-bottom: 3.5rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 1200px;
+    transition: all 2s;
+    left: 0px;
 }
+
+.one-page-cards_wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    min-width: 100%;
+    margin-bottom: 4rem;
+}
+
 
 .card-pet {
     width: 270px;
@@ -185,6 +205,7 @@ nav {
 .pagination_content {
     width: 100%;
     text-align: center;
+    margin-left: 6px;
 }
 
 .pagination_content ul {
@@ -193,60 +214,37 @@ nav {
 
 .pagination_content ul li {
     display: inline-block;
-    list-style: none;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 1em;
-    text-align: center;
     margin-right: 18px;
 }
 
 .pagination-link {
+    font-size: 2rem;
     height: 52px;
     width: 52px;
     border-radius: 100px;
-}
-
-.pagination-link, .pagination-link:visited {
     display: block;
     text-decoration: none;
-    border: 0.1em solid #CDCDCD;
-    height: 52px;
-    width: 52px;
-    line-height: 45px;
+    border: 0.1em solid #F1CDB3;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding-bottom: 6px;
+    cursor: grab;
 }
 
 .pagination-link:hover {
-    display: block;
-    text-decoration: none;
-}
-
-.pagination_content li:last-child {
-    margin-right: 0px;
+    background-color: #F1CDB3;
+    cursor: grab;
 }
 
 .disabled {
     pointer-events: none;
     color: #CDCDCD;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 2em;
+    border: 0.1em solid #CDCDCD;
 }
 
-.link_current-page {
-    background-color: #F1CDB3;
-    border: 0.1em solid #F1CDB3;
-    color: #292929;
-    font-size: 2em;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+.hidden {
+    display: none;
 }
 
-
-.link_next-page, .link_last-page {
-    text-decoration: none;
-    border: 0.1em solid #F1CDB3;
-    color: #292929;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 2em;
-}
 
 /* popup */
 
@@ -370,7 +368,6 @@ nav {
 
 .list {
     margin-bottom: 1rem;
-
 }
 
 .popup-text_content_list {
@@ -473,7 +470,6 @@ nav {
     line-height: 115%;
     letter-spacing: 0.06em;
     color: #F1CDB3;
-
 }
 
 .phone {

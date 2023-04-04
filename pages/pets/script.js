@@ -132,22 +132,72 @@ window.addEventListener('DOMContentLoaded', () => {
         }
       ];
 
-    function createPetsCard(card) {
+    function createPetsCard(id) {
         return `
-            <div class="card-pet" id=${card.id}>
-                        <img src=${card.img} alt=${card.name}>
-                        <p>${card.name}</p>
+            <div class="card-pet" id=${id}>
+                        <img src=${petsCardsContentArray[id].img} alt=${petsCardsContentArray[id].name}>
+                        <p>${petsCardsContentArray[id].name}</p>
                         <button type="button" class="card-button">Learn more</button>
             </div>
         `
     }
 
 
+    let generalCardArray = new Array();
+
+    function creatCardArray () {
+        if (viewForm() === "desktop") {
+            for (let i = 1; i <= 6; i++) {
+                let array = new Array();
+                for (let j = 0; j < petsCardsContentArray.length; j++) {
+                    array.push(petsCardsContentArray[Math.floor(Math.random() * petsCardsContentArray.length)].id);
+                }
+                deleteDuplicates(array);
+                generalCardArray.push(array);
+            }
+        } return generalCardArray;
+    }
+    creatCardArray();
+
+
+    function deleteDuplicates(array) {
+        for (let i = 0; i < array.length; i++) {
+            for (let j = (i+1); j < array.length; j++) {
+                if (array[i] === array[j]) {
+                    let randomId = Math.floor(Math.random() * petsCardsContentArray.length);
+                    array[j] = petsCardsContentArray[randomId].id;
+                    i = -1;
+                    break;
+                }
+            }
+        }
+    }
+
+
     const petCardsWrapper = document.querySelector('.main-section_cards');
-    const petsCardsContent = petsCardsContentArray.map(card => {
-        return createPetsCard(card);
-    }).join('');
-    petCardsWrapper.innerHTML = petsCardsContent;
+
+    let  petsCardsContent;
+    if (viewForm() === "desktop") {
+        for (let i = 0; i < generalCardArray.length; i++) {
+            petsCardsContent = generalCardArray[i].map(card => {
+                    return createPetsCard(card);
+                }).join('');
+            let petCardPageContent = document.createElement('div');
+            petCardPageContent.setAttribute('id', [i + 10]);
+            petCardPageContent.innerHTML = petsCardsContent;
+            petCardsWrapper.appendChild(petCardPageContent);
+          }
+    }
+
+    petCardsWrapper.firstElementChild.classList.add('page-active');
+
+
+    let petCardsWrapperChildren = Array.from(petCardsWrapper.children);
+
+    petCardsWrapperChildren.forEach(wrapper => {
+        wrapper.classList.add('one-page-cards_wrapper');
+    });
+
 
      /* Checking window size */
 
@@ -161,7 +211,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }
       };
 
-      console.log(viewForm())
+      console.log(viewForm());
 
 
      /* Popup */
@@ -182,7 +232,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
     let petCardsArray = document.querySelectorAll('.card-pet');
-    console.log(petCardsArray);
     petCardsArray.forEach(card => {
         card.addEventListener('click', openPopup);
     });
@@ -190,11 +239,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
     function openPopup(even) {
         let card = event.target;
-        console.log(card);
         let cardParent = card.parentElement;
         let cardParentdId = cardParent.getAttribute('id');
         let oCard = getCardObject(cardParentdId);
-        console.log(oCard.name);
 
         popupHeader.textContent = oCard.name;
         popupHeaderText.innerHTML = oCard.type + " - " + oCard.breed;
@@ -272,6 +319,142 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
         body.classList.remove("body-noscroll");
+    }
+
+
+    /* Pagination */
+
+    const nextPageButton = document.querySelector('.link_next-page');
+    const petCardsWrapperArrays = document.querySelectorAll('.one-page-cards_wrapper');
+    const previousPageButton = document.querySelector('.link_previous-page');
+    const firstPageButton = document.querySelector('.link_first-page');
+    const lastPageButton = document.querySelector('.link_last-page');
+
+
+    previousPageButton.classList.add('disabled');
+    firstPageButton.classList.add('disabled');
+
+    let offset = 0;
+
+     /* Next page pagination */
+
+    nextPageButton.addEventListener('click', moveNextPage);
+
+    function moveNextPage(event) {
+        let currentPage = petCardsWrapper.querySelector('.page-active');
+        let currentPageId = +currentPage.id;
+        offset += 1200;
+        if (offset > 6000) {
+            offset = 6000;
+        }
+        petCardsWrapper.style.left = -offset + 'px';
+
+        console.log(currentPageId);
+
+        let nextPageId = currentPageId + 1;
+        let nextPage = petCardsWrapper.querySelector(`[id = "${nextPageId}"]`);
+
+        if ((currentPageId - 10 + 2) === petCardsWrapperArrays.length) {
+            currentPage.classList.remove('page-active');
+            nextPage.classList.add('page-active');
+            nextPageButton.classList.add('disabled');
+            lastPageButton.classList.add('disabled');
+            drawCurrentPageButton (nextPageId);
+
+        } else {
+            nextPageButton.classList.remove('disabled');
+            currentPage.classList.remove('page-active');
+            nextPage.classList.add('page-active');
+            previousPageButton.classList.remove('disabled');
+            firstPageButton.classList.remove('disabled');
+            drawCurrentPageButton (nextPageId);
+        }
+
+    }
+
+    /* Previous page pagination  */
+
+    previousPageButton.addEventListener('click', movePreviousPage);
+
+    function movePreviousPage(event) {
+        let currentPage = petCardsWrapper.querySelector('.page-active');
+        let currentPageId = +currentPage.id;
+
+        lastPageButton.classList.remove('disabled');
+        nextPageButton.classList.remove('disabled');
+
+        console.log(currentPageId);
+
+        offset -= 1200;
+        if (offset < 0) {
+            offset = 0;
+        }
+        petCardsWrapper.style.left = -offset + 'px';
+
+        let previousPageId = currentPageId - 1;
+        let previousPage = petCardsWrapper.querySelector(`[id = "${previousPageId}"]`);
+
+        if ((currentPageId - 10) === 1) {
+            previousPageButton.classList.add('disabled');
+            firstPageButton.classList.add('disabled');
+            drawCurrentPageButton (previousPageId);
+
+        } else {
+            previousPageButton.classList.remove('disabled');
+            currentPage.classList.remove('page-active');
+            previousPage.classList.add('page-active');
+            drawCurrentPageButton (previousPageId);
+        }
+    };
+
+    /* First page pagination */
+
+    const firstPageId = petCardsWrapperArrays[0].id;
+
+    firstPageButton.addEventListener('click', moveFirstPage);
+
+    function moveFirstPage(event) {
+        offset = 0;
+        petCardsWrapper.style.left = offset + 'px';
+        firstPageButton.classList.add('disabled');
+        previousPageButton.classList.add('disabled');
+        drawCurrentPageButton (firstPageId);
+
+        let activePage = document.querySelector('.page-active');
+        activePage.classList.remove('page-active');
+        let firstPage = petCardsWrapperArrays[0];
+        firstPage.classList.add('page-active');
+        lastPageButton.classList.remove('disabled');
+        nextPageButton.classList.remove('disabled');
+
+    }
+
+       /* Last page pagination */
+
+    const lastPageId = petCardsWrapperArrays[petCardsWrapperArrays.length - 1].id;
+    console.log(lastPageId);
+
+    lastPageButton.addEventListener('click', moveLastPage);
+
+    function moveLastPage (event) {
+        offset = 6000;
+        petCardsWrapper.style.left = -offset + 'px';
+        lastPageButton.classList.add('disabled');
+        nextPageButton.classList.add('disabled');
+        drawCurrentPageButton (lastPageId);
+
+        let activePage = document.querySelector('.page-active');
+        activePage.classList.remove('page-active');
+        let lastPage = petCardsWrapperArrays[petCardsWrapperArrays.length - 1];
+        lastPage.classList.add('page-active');
+        firstPageButton.classList.remove('disabled');
+        previousPageButton.classList.remove('disabled');
+
+    }
+
+
+    function drawCurrentPageButton (activePageId) {
+        document.querySelector('.link_current-page').innerHTML = activePageId - 9;
     }
 
 
