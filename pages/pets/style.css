@@ -580,12 +580,28 @@ nav {
         right: 31px;
     }
 
+    /* Main section with cards */
+
     .main-section {
         height: 1733px;
     }
 
+    .main-section_cards {
+        width: 720px;
+        margin-bottom: 1.3rem;
+    }
+
     .main-section_content h2 {
         padding-top: 8rem;
+    }
+
+    .card-pet_wrapper {
+        width: 720px;
+    }
+
+    .one-page-cards_wrapper {
+        justify-content: center;
+        margin-bottom: 0;
     }
 
     .card-pet:first-child {
@@ -607,10 +623,6 @@ nav {
 
     .main-section_content h2 {
         margin-bottom: 3.1rem;
-    }
-
-    .main-section_cards {
-        margin-bottom: 1.3rem;
     }
 
  /* popup */

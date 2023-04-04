@@ -142,23 +142,45 @@ window.addEventListener('DOMContentLoaded', () => {
         `
     }
 
-
     let generalCardArray = new Array();
 
     function creatCardArray () {
+        let array = new Array();
+
         if (viewForm() === "desktop") {
             for (let i = 1; i <= 6; i++) {
-                let array = new Array();
+                array = new Array();
                 for (let j = 0; j < petsCardsContentArray.length; j++) {
-                    array.push(petsCardsContentArray[Math.floor(Math.random() * petsCardsContentArray.length)].id);
+                     array.push(petsCardsContentArray[Math.floor(Math.random() * petsCardsContentArray.length)].id);
                 }
                 deleteDuplicates(array);
                 generalCardArray.push(array);
             }
-        } return generalCardArray;
-    }
-    creatCardArray();
 
+        } else if (viewForm() === "netbook") {
+           let num;
+            for (let i = 1; i <= 8; i++) {
+                array = new Array();
+                for (let j = 0; j < 6; j++) {
+                    while (true) {
+                        num = petsCardsContentArray[Math.floor(Math.random() * petsCardsContentArray.length)].id;
+                        if ((findDublicate(num, array) === false) && (isCountElementExceeded(num) === false)) {
+                            if ((j < 2) && findDublicate(num, generalCardArray[i -1]) === false) {
+                                array.push(num);
+                                break;
+                            } else if (j >= 2) {
+                                array.push(num);
+                                break;
+                            }
+                        }
+                    }
+                    repeatArray[num] = repeatArray[num] + 1;
+                }
+                generalCardArray.push(array);
+            }
+            return generalCardArray;
+        }
+    }
 
     function deleteDuplicates(array) {
         for (let i = 0; i < array.length; i++) {
@@ -173,23 +195,42 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    function findDublicate(num, array) {
+        if (!array) {
+            return false;
+        }
+        for (let i = 0; i < array.length; i++) {
+            if (num === array[i]) {
+                return true;
+            }
+        } return false;
+    }
+
+
+    let repeatArray = new Array(8).fill(0); // массив, где хранится кол-во раз повторений
+
+    function isCountElementExceeded(num) {
+        if (repeatArray[num] > 6) {
+            return true;
+        } return false;
+    }
+
+
+   creatCardArray();
 
     const petCardsWrapper = document.querySelector('.main-section_cards');
 
     let  petsCardsContent;
-    if (viewForm() === "desktop") {
-        for (let i = 0; i < generalCardArray.length; i++) {
-            petsCardsContent = generalCardArray[i].map(card => {
-                    return createPetsCard(card);
-                }).join('');
-            let petCardPageContent = document.createElement('div');
-            petCardPageContent.setAttribute('id', [i + 10]);
-            petCardPageContent.innerHTML = petsCardsContent;
-            petCardsWrapper.appendChild(petCardPageContent);
-          }
-    }
+    for (let i = 0; i < generalCardArray.length; i++) {
+        petsCardsContent = generalCardArray[i].map(card => {
+                return createPetsCard(card);
+            }).join('');
+        let petCardPageContent = document.createElement('div');
+        petCardPageContent.setAttribute('id', [i + 10]);
+        petCardPageContent.innerHTML = petsCardsContent;
+        petCardsWrapper.appendChild(petCardPageContent);
 
-    petCardsWrapper.firstElementChild.classList.add('page-active');
+    }
 
 
     let petCardsWrapperChildren = Array.from(petCardsWrapper.children);
@@ -197,6 +238,10 @@ window.addEventListener('DOMContentLoaded', () => {
     petCardsWrapperChildren.forEach(wrapper => {
         wrapper.classList.add('one-page-cards_wrapper');
     });
+
+    let wrapperCardsArray = document.querySelectorAll('one-page-cards_wrapper');
+
+    petCardsWrapperChildren[0].classList.add('page-active');
 
 
      /* Checking window size */
@@ -297,8 +342,6 @@ window.addEventListener('DOMContentLoaded', () => {
         button.style.left = text.offsetWidth + "px";
         button.style.top = -button.clientHeight + "px";
         }
-
-
     }
 
     /* close popup */
@@ -343,34 +386,45 @@ window.addEventListener('DOMContentLoaded', () => {
     function moveNextPage(event) {
         let currentPage = petCardsWrapper.querySelector('.page-active');
         let currentPageId = +currentPage.id;
-        offset += 1200;
-        if (offset > 6000) {
-            offset = 6000;
-        }
-        petCardsWrapper.style.left = -offset + 'px';
 
-        console.log(currentPageId);
 
-        let nextPageId = currentPageId + 1;
-        let nextPage = petCardsWrapper.querySelector(`[id = "${nextPageId}"]`);
+        if (viewForm() === "desktop") {
+                offset += 1200;
+                if (offset > 6000) {
+                    offset = 6000;
+                }
+            }
 
-        if ((currentPageId - 10 + 2) === petCardsWrapperArrays.length) {
-            currentPage.classList.remove('page-active');
-            nextPage.classList.add('page-active');
-            nextPageButton.classList.add('disabled');
-            lastPageButton.classList.add('disabled');
-            drawCurrentPageButton (nextPageId);
+        if (viewForm() === "netbook") {
+                offset += 720;
+                if (offset > 5040) {
+                    offset = 5040;
+                }
+            }
 
-        } else {
-            nextPageButton.classList.remove('disabled');
-            currentPage.classList.remove('page-active');
-            nextPage.classList.add('page-active');
-            previousPageButton.classList.remove('disabled');
-            firstPageButton.classList.remove('disabled');
-            drawCurrentPageButton (nextPageId);
-        }
+            petCardsWrapper.style.left = -offset + 'px';
 
-    }
+            let nextPageId = currentPageId + 1;
+            let nextPage = petCardsWrapper.querySelector(`[id = "${nextPageId}"]`);
+
+            if ((currentPageId - 10 + 2) === petCardsWrapperArrays.length) {
+                currentPage.classList.remove('page-active');
+                nextPage.classList.add('page-active');
+                nextPageButton.classList.add('disabled');
+                lastPageButton.classList.add('disabled');
+                drawCurrentPageButton (nextPageId);
+
+            } else {
+                nextPageButton.classList.remove('disabled');
+                currentPage.classList.remove('page-active');
+                nextPage.classList.add('page-active');
+                previousPageButton.classList.remove('disabled');
+                firstPageButton.classList.remove('disabled');
+                drawCurrentPageButton (nextPageId);
+            }
+         }
+
+
 
     /* Previous page pagination  */
 
@@ -379,32 +433,44 @@ window.addEventListener('DOMContentLoaded', () => {
     function movePreviousPage(event) {
         let currentPage = petCardsWrapper.querySelector('.page-active');
         let currentPageId = +currentPage.id;
-
         lastPageButton.classList.remove('disabled');
         nextPageButton.classList.remove('disabled');
 
-        console.log(currentPageId);
-
-        offset -= 1200;
-        if (offset < 0) {
-            offset = 0;
+        if (viewForm() === "desktop") {
+            offset -= 1200;
+            if (offset < 0) {
+                offset = 0;
+            }
         }
-        petCardsWrapper.style.left = -offset + 'px';
 
-        let previousPageId = currentPageId - 1;
-        let previousPage = petCardsWrapper.querySelector(`[id = "${previousPageId}"]`);
-
-        if ((currentPageId - 10) === 1) {
-            previousPageButton.classList.add('disabled');
-            firstPageButton.classList.add('disabled');
-            drawCurrentPageButton (previousPageId);
-
-        } else {
-            previousPageButton.classList.remove('disabled');
-            currentPage.classList.remove('page-active');
-            previousPage.classList.add('page-active');
-            drawCurrentPageButton (previousPageId);
+        if (viewForm() === "netbook") {
+            offset -= 720;
+            if (offset < 0) {
+                offset = 0;
+            }
         }
+
+
+            petCardsWrapper.style.left = -offset + 'px';
+
+            let previousPageId = currentPageId - 1;
+            let previousPage = petCardsWrapper.querySelector(`[id = "${previousPageId}"]`);
+
+            if ((currentPageId - 10) === 1) {
+                currentPage.classList.remove('page-active');
+                previousPage.classList.add('page-active');
+
+
+                previousPageButton.classList.add('disabled');
+                firstPageButton.classList.add('disabled');
+                drawCurrentPageButton (previousPageId);
+
+            } else {
+                previousPageButton.classList.remove('disabled');
+                currentPage.classList.remove('page-active');
+                previousPage.classList.add('page-active');
+                drawCurrentPageButton (previousPageId);
+            }
     };
 
     /* First page pagination */
@@ -418,6 +484,7 @@ window.addEventListener('DOMContentLoaded', () => {
         petCardsWrapper.style.left = offset + 'px';
         firstPageButton.classList.add('disabled');
         previousPageButton.classList.add('disabled');
+
         drawCurrentPageButton (firstPageId);
 
         let activePage = document.querySelector('.page-active');
@@ -432,24 +499,29 @@ window.addEventListener('DOMContentLoaded', () => {
        /* Last page pagination */
 
     const lastPageId = petCardsWrapperArrays[petCardsWrapperArrays.length - 1].id;
-    console.log(lastPageId);
 
     lastPageButton.addEventListener('click', moveLastPage);
 
     function moveLastPage (event) {
-        offset = 6000;
-        petCardsWrapper.style.left = -offset + 'px';
-        lastPageButton.classList.add('disabled');
-        nextPageButton.classList.add('disabled');
-        drawCurrentPageButton (lastPageId);
+        if (viewForm() === "desktop") {
+            offset = 6000;
+        }
 
-        let activePage = document.querySelector('.page-active');
-        activePage.classList.remove('page-active');
-        let lastPage = petCardsWrapperArrays[petCardsWrapperArrays.length - 1];
-        lastPage.classList.add('page-active');
-        firstPageButton.classList.remove('disabled');
-        previousPageButton.classList.remove('disabled');
+        if (viewForm() === "netbook") {
+            offset = 5760;
+        }
 
+            petCardsWrapper.style.left = -offset + 'px';
+            lastPageButton.classList.add('disabled');
+            nextPageButton.classList.add('disabled');
+            drawCurrentPageButton (lastPageId);
+
+            let activePage = document.querySelector('.page-active');
+            activePage.classList.remove('page-active');
+            let lastPage = petCardsWrapperArrays[petCardsWrapperArrays.length - 1];
+            lastPage.classList.add('page-active');
+            firstPageButton.classList.remove('disabled');
+            previousPageButton.classList.remove('disabled');
     }
 
 
