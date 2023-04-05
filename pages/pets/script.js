@@ -179,6 +179,31 @@ window.addEventListener('DOMContentLoaded', () => {
                 generalCardArray.push(array);
             }
             return generalCardArray;
+
+        } else if (viewForm() === "phone") {
+            let num;
+            for (let i = 1; i <= 16; i++) {
+                array = new Array();
+                for (let j = 0; j < 3; j++) {
+                    while (true) {
+                        num = petsCardsContentArray[Math.floor(Math.random() * petsCardsContentArray.length)].id;
+                        if ((findDublicate(num, array) === false) && (isCountElementExceeded(num) === false)) {
+/*                             if ((j < 2) && findDublicate(num, generalCardArray[i - 1]) === false && findDublicate(num, generalCardArray[i - 2]) === false) {
+                                array.push(num);
+                                break;
+                            } else if (j >=2) {
+                                array.push(num);
+                                break;
+                            } */
+                            array.push(num);
+                            break;
+                        }
+                    }
+                    repeatArray[num] = repeatArray[num] + 1;
+                }
+                generalCardArray.push(array);
+            }
+            return generalCardArray;
         }
     }
 
@@ -194,6 +219,8 @@ window.addEventListener('DOMContentLoaded', () => {
             }
         }
     }
+
+
 
     function findDublicate(num, array) {
         if (!array) {
@@ -402,6 +429,15 @@ window.addEventListener('DOMContentLoaded', () => {
                 }
             }
 
+        if (viewForm() === "phone") {
+                offset += 320;
+                if (offset > 5120) {
+                    offset = 5120;
+                }
+            }
+
+
+
             petCardsWrapper.style.left = -offset + 'px';
 
             let nextPageId = currentPageId + 1;
@@ -450,6 +486,12 @@ window.addEventListener('DOMContentLoaded', () => {
             }
         }
 
+        if (viewForm() === "phone") {
+            offset -= 320;
+            if (offset < 0) {
+                offset = 0;
+            }
+        }
 
             petCardsWrapper.style.left = -offset + 'px';
 
@@ -511,17 +553,22 @@ window.addEventListener('DOMContentLoaded', () => {
             offset = 5760;
         }
 
-            petCardsWrapper.style.left = -offset + 'px';
-            lastPageButton.classList.add('disabled');
-            nextPageButton.classList.add('disabled');
-            drawCurrentPageButton (lastPageId);
+        if (viewForm() === "phone") {
+            offset = 5120;
+        }
 
-            let activePage = document.querySelector('.page-active');
-            activePage.classList.remove('page-active');
-            let lastPage = petCardsWrapperArrays[petCardsWrapperArrays.length - 1];
-            lastPage.classList.add('page-active');
-            firstPageButton.classList.remove('disabled');
-            previousPageButton.classList.remove('disabled');
+
+        petCardsWrapper.style.left = -offset + 'px';
+        lastPageButton.classList.add('disabled');
+        nextPageButton.classList.add('disabled');
+        drawCurrentPageButton (lastPageId);
+
+        let activePage = document.querySelector('.page-active');
+        activePage.classList.remove('page-active');
+        let lastPage = petCardsWrapperArrays[petCardsWrapperArrays.length - 1];
+        lastPage.classList.add('page-active');
+        firstPageButton.classList.remove('disabled');
+        previousPageButton.classList.remove('disabled');
     }
 
 

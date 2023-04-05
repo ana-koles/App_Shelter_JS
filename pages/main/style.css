@@ -224,7 +224,7 @@ h3 {
     font-size: 1.5rem;
     color: #4C4C4C;
     line-height: 1.6em;
-    padding-top: 25px;
+    padding-top: 23px;
 }
 
 .right-side_second-section p:last-child {
@@ -277,7 +277,7 @@ h3 {
 
 .card-pet_wrapper {
     width: 990px;
-    display: flex;
+    /* display: flex; */
     overflow: hidden;
 }
 
@@ -292,6 +292,9 @@ h3 {
 
 .carousel-items {
     display: flex;
+    justify-content: center;
+    min-width: 100%;
+
 
 }
 
@@ -1145,7 +1148,7 @@ h3 {
         background: #F1CDB3;
         margin-bottom: 8px;
         position: relative;
-        transition: 1s all;
+        transition: 2s all;
     }
 
     .burger span:last-child {
@@ -1374,21 +1377,25 @@ h3 {
 /*     animation */
 
     .card-pet_wrapper {
-        width: 270px;
+        width: 320px;
+        margin: 0 auto;
+        overflow: hidden;
     }
 
     .carousel {
-        left: -270px;
+        left: -320px;
+        width: 320px;
     }
 
+
     @keyframes move-left {
-        from{left: -270px;}
+        from{left: -320px;}
         to{left:0px;}
     }
 
     @keyframes move-right {
-            from{left: -270px;}
-            to{left: -540px}
+            from{left: -320px;}
+            to{left: -640px}
     }
 
        /* popup */

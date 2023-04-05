@@ -200,7 +200,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     let leftPetsCardsRandomArray;
     let activePetsCardsRandomArray;
-    let rightPetCardsRandomArray;
+    let rightPetsCardsRandomArray;
 
     if (viewForm() === "desktop") {
         leftPetsCardsRandomArray = petsCardsRandomArray.slice(0, 3);
@@ -209,8 +209,8 @@ window.addEventListener('DOMContentLoaded', () => {
         activePetsCardsRandomArray = petsCardsRandomArray.slice(3, 6);
         deleteDuplicates(activePetsCardsRandomArray);
 
-        rightPetCardsRandomArray = petsCardsRandomArray.slice(6);
-        deleteDuplicates(rightPetCardsRandomArray);
+        rightPetsCardsRandomArray = petsCardsRandomArray.slice(6);
+        deleteDuplicates(rightPetsCardsRandomArray);
 
     } else if(viewForm() === "netbook"){
         leftPetsCardsRandomArray = petsCardsRandomArray.slice(0, 2);
@@ -219,8 +219,8 @@ window.addEventListener('DOMContentLoaded', () => {
         activePetsCardsRandomArray = petsCardsRandomArray.slice(2, 4);
         deleteDuplicates(activePetsCardsRandomArray);
 
-        rightPetCardsRandomArray = petsCardsRandomArray.slice(4);
-        deleteDuplicates(rightPetCardsRandomArray);
+        rightPetsCardsRandomArray = petsCardsRandomArray.slice(4);
+        deleteDuplicates(rightPetsCardsRandomArray);
     } else if (viewForm() === "phone") {
         leftPetsCardsRandomArray = petsCardsRandomArray.slice(0, 1);
         deleteDuplicates(leftPetsCardsRandomArray);
@@ -228,15 +228,15 @@ window.addEventListener('DOMContentLoaded', () => {
         activePetsCardsRandomArray = petsCardsRandomArray.slice(1, 2);
         deleteDuplicates(activePetsCardsRandomArray);
 
-        rightPetCardsRandomArray = petsCardsRandomArray.slice(2, 3);
-        deleteDuplicates(rightPetCardsRandomArray);
+        rightPetsCardsRandomArray = petsCardsRandomArray.slice(2, 3);
+        deleteDuplicates(rightPetsCardsRandomArray);
     }
 
 
     // checking dublicates between the group of cards
 
     findDublicates(leftPetsCardsRandomArray, activePetsCardsRandomArray);
-    findDublicates(rightPetCardsRandomArray, activePetsCardsRandomArray);
+    findDublicates(rightPetsCardsRandomArray, activePetsCardsRandomArray);
 
     function findInArrayByID(array, id) {
         for (let i = 0; i < array.length; i++) {
@@ -277,7 +277,7 @@ window.addEventListener('DOMContentLoaded', () => {
     activePetCardsWrapper.innerHTML = petCardsActive;
 
 
-    const petCardsRight = rightPetCardsRandomArray.map(card => {
+    const petCardsRight = rightPetsCardsRandomArray.map(card => {
         return createPetsCard(card);
     }).join("");
     rightPetCardsWrapper.innerHTML = petCardsRight;
@@ -289,6 +289,8 @@ window.addEventListener('DOMContentLoaded', () => {
     const leftArrow = document.querySelector('.slider-left');
     const rightArrow = document.querySelector('.slider-right');
 
+   /*  moving left  */
+
     leftArrow.addEventListener('click', moveCarouselLeft);
 
     function moveCarouselLeft(event) {
@@ -296,6 +298,8 @@ window.addEventListener('DOMContentLoaded', () => {
         leftArrow.removeEventListener('click', moveCarouselLeft);
         rightArrow.removeEventListener('click', moveCarouselRight);
     };
+
+    /* moving right */
 
     rightArrow.addEventListener('click', moveCarouselRight);
 
@@ -305,21 +309,31 @@ window.addEventListener('DOMContentLoaded', () => {
         leftArrow.removeEventListener('click', moveCarouselLeft);
     };
 
+
+
     cardPetCarousel.addEventListener("animationend", (event) => {
         if (event.animationName === 'move-left') {
             cardPetCarousel.classList.remove('transition-left');
 
-            let activePetCardsArray = activePetCardsWrapper.querySelectorAll('.card-pet');
+           let activePetCardsArray = activePetCardsWrapper.querySelectorAll('.card-pet');
             activePetCardsArray.forEach(card => {
                 card.removeEventListener('click', openPopup);
             });
 
             activePetCardsWrapper.innerHTML = leftPetCardsWrapper.innerHTML;
             activePetsCardsRandomArray.length = 0;
+
+            console.log(activePetsCardsRandomArray.length);
+
             activePetsCardsRandomArray.push.apply(activePetsCardsRandomArray, leftPetsCardsRandomArray);
-            let petCardsChanged = createPetCardsArrayRandomSmall(leftPetsCardsRandomArray);
+
+            let petCardsChanged = createPetCardsArrayRandomSmall(leftPetsCardsRandomArray, "left");
             leftPetCardsWrapper.innerHTML = '';
             leftPetCardsWrapper.innerHTML = petCardsChanged;
+
+            petCardsChanged = createPetCardsArrayRandomSmall(rightPetsCardsRandomArray, "right");
+            rightPetCardsWrapper.innerHTML = '';
+            rightPetCardsWrapper.innerHTML = petCardsChanged;
 
             activePetCardsArray = activePetCardsWrapper.querySelectorAll('.card-pet');
             activePetCardsArray.forEach(card => {
@@ -338,10 +352,18 @@ window.addEventListener('DOMContentLoaded', () => {
 
             activePetCardsWrapper.innerHTML = rightPetCardsWrapper.innerHTML;
             activePetsCardsRandomArray.length = 0;
-            activePetsCardsRandomArray.push.apply(activePetsCardsRandomArray, rightPetCardsRandomArray);
-            let petCardsChanged = createPetCardsArrayRandomSmall(rightPetCardsRandomArray);
+
+            activePetsCardsRandomArray.push.apply(activePetsCardsRandomArray, rightPetsCardsRandomArray);
+
+            /* create new rigth array */
+
+            let petCardsChanged = createPetCardsArrayRandomSmall(rightPetsCardsRandomArray, "right");
             rightPetCardsWrapper.innerHTML = '';
             rightPetCardsWrapper.innerHTML = petCardsChanged;
+
+            petCardsChanged = createPetCardsArrayRandomSmall(leftPetsCardsRandomArray, "left");
+            leftPetCardsWrapper.innerHTML = '';
+            leftPetCardsWrapper.innerHTML = petCardsChanged;
 
             activePetCardsArray = activePetCardsWrapper.querySelectorAll('.card-pet');
             activePetCardsArray.forEach(card => {
@@ -468,7 +490,6 @@ window.addEventListener('DOMContentLoaded', () => {
         button.style.left = text.offsetWidth + "px";
         button.style.top = -button.clientHeight + "px";
         }
-
 
     }
 
