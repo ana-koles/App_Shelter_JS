@@ -162,6 +162,11 @@ h1 {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+.first-section_button:hover {
+    cursor: pointer;
+    background: #FDDCC4;
+}
+
 .right-side_first-section {
     position: relative;
     left: 10px;
@@ -233,7 +238,7 @@ h3 {
 
 .second-section_button {
     display: block;
-    margin: 9rem auto 0 auto;
+    margin: 6rem auto 0 auto;
     height: 52px;
     width: 261px;
     background: #F1CDB3;
@@ -243,7 +248,11 @@ h3 {
     border: none;
     letter-spacing: 0.1rem;
     font-family: Georgia, 'Times New Roman', Times, serif;
+}
 
+.second-section_button:hover {
+    cursor: pointer;
+    background: #FDDCC4;
 }
 
 /* Тhird section */
@@ -277,7 +286,6 @@ h3 {
 
 .card-pet_wrapper {
     width: 990px;
-    /* display: flex; */
     overflow: hidden;
 }
 
@@ -323,6 +331,8 @@ h3 {
 .card-pet {
     margin-right: 9rem;
     width: 270px;
+    background: #FAFAFA;
+    height: 435px;
 }
 
 .card-pet:last-child {
@@ -368,11 +378,11 @@ h3 {
     width: 52px;
     border: 0.2em solid #F1CDB3;
     border-radius: 100px;
-    margin-top: 33px;
+    margin-top: 7px;
 }
 
 .button-arrow:hover {
-    background-color: #F1CDB3;
+    background-color: #FDDCC4;
     cursor: grab;
 }
 
@@ -855,7 +865,7 @@ h3 {
 
 @media (max-width: 1279px) {
     .container {
-        max-width: 720px;
+        max-width: 708px;
     }
 
     .first-section {
@@ -867,7 +877,7 @@ h3 {
 
 
     .nav-menu_item {
-        margin-right: 4rem;
+        margin-right: 3.3rem;
     }
 
 
@@ -1148,7 +1158,7 @@ h3 {
         background: #F1CDB3;
         margin-bottom: 8px;
         position: relative;
-        transition: 2s all;
+        transition: 1s all;
     }
 
     .burger span:last-child {
@@ -1204,7 +1214,8 @@ h3 {
         background: #292929;
         width: 320px;
         z-index: 100;
-        transition: 0.5s all;
+        transition: all 1s ease-in-out;
+
     }
 
     .nav-menu_list {
