@@ -383,6 +383,7 @@ h3 {
 
 .button-arrow:hover {
     background-color: #FDDCC4;
+    border-color: #FDDCC4;
     cursor: grab;
 }
 

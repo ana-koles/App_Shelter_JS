@@ -423,16 +423,16 @@ window.addEventListener('DOMContentLoaded', () => {
             }
 
         if (viewForm() === "netbook") {
-                offset += 720;
-                if (offset > 5040) {
-                    offset = 5040;
+                offset += 708;
+                if (offset > 4956) {
+                    offset = 4956;
                 }
             }
 
         if (viewForm() === "phone") {
                 offset += 320;
-                if (offset > 5120) {
-                    offset = 5120;
+                if (offset > 4800) {
+                    offset = 4800;
                 }
             }
 
@@ -550,11 +550,11 @@ window.addEventListener('DOMContentLoaded', () => {
         }
 
         if (viewForm() === "netbook") {
-            offset = 5760;
+            offset = 4956;
         }
 
         if (viewForm() === "phone") {
-            offset = 5120;
+            offset = 4800;
         }
 
 
